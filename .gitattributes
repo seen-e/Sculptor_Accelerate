@@ -1,0 +1,9 @@
+# Preserve the imported handover snapshot byte-for-byte on every platform.
+* -text
+
+# Keep readable diffs for source and documentation while disabling EOL conversion.
+*.py diff=python
+*.md diff
+*.txt diff
+*.json diff
+*.html diff

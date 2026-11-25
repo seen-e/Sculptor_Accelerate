@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>吸盘取放时间</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.35.2/plotly.min.js"></script>
+<style>
+:root {
+  color-scheme: light;
+  --bg: #f5f5f3; --surface: #fcfcfb; --border: #e2e1dc; --grid: #ecebe7;
+  --text: #0b0b0b; --text2: #52514e; --muted: #8a8984;
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100; --s5: #e87ba4; --s6: #008300; --s7: #6250d6; --s8: #e34948;
+  --hold: rgba(42,120,214,.13); --place: rgba(232,123,164,.32); --prot: rgba(255,165,0,.20);
+  --hl: rgba(42,120,214,.08);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #111110; --surface: #1a1a19; --border: #2e2e2c; --grid: #262625;
+    --text: #f0efec; --text2: #c3c2b7; --muted: #8a8984;
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s6: #008300; --s7: #9085e9; --s8: #e66767;
+    --hold: rgba(57,135,229,.20); --place: rgba(213,81,129,.35); --prot: rgba(255,165,0,.18);
+    --hl: rgba(57,135,229,.15);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #111110; --surface: #1a1a19; --border: #2e2e2c; --grid: #262625;
+  --text: #f0efec; --text2: #c3c2b7; --muted: #8a8984;
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s6: #008300; --s7: #9085e9; --s8: #e66767;
+  --hold: rgba(57,135,229,.20); --place: rgba(213,81,129,.35); --prot: rgba(255,165,0,.18);
+  --hl: rgba(57,135,229,.15);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text);
+  font: 14px/1.55 -apple-system, "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; }
+main { max-width: 1400px; margin: 0 auto; padding: 24px 16px 64px; }
+h1 { font-size: 22px; margin: 0 0 4px; }
+h2 { font-size: 16px; margin: 0 0 10px; }
+.sub { color: var(--text2); margin: 0 0 20px; word-break: break-all; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin-bottom: 16px; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.tile { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; }
+.tile .k { color: var(--text2); font-size: 12px; }
+.tile .v { font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.tile .u { font-size: 13px; color: var(--text2); font-weight: 400; margin-left: 2px; }
+.note { color: var(--text2); font-size: 13px; }
+.note b { color: var(--text); }
+.note ul { margin: 6px 0 0; padding-left: 20px; }
+.tw { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; font-size: 13px; }
+th, td { padding: 6px 10px; text-align: right; border-bottom: 1px solid var(--border); white-space: nowrap; }
+th { color: var(--text2); font-weight: 500; position: sticky; top: 0; background: var(--surface); }
+th:first-child, td:first-child { text-align: left; }
+tbody tr { cursor: pointer; }
+tbody tr:hover { background: var(--hl); }
+tr.sel { background: var(--hl); font-weight: 600; }
+td.muted { color: var(--muted); }
+.ctrl { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; margin-bottom: 10px; }
+select, button { font: inherit; color: var(--text); background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 4px 10px; }
+button { cursor: pointer; }
+label { color: var(--text2); display: inline-flex; gap: 6px; align-items: center; }
+.sw { display: inline-block; width: 14px; height: 10px; border-radius: 2px; vertical-align: middle; margin-right: 4px; }
+#plot { width: 100%; height: 2000px; }
+.legend-row { display: flex; flex-wrap: wrap; gap: 6px 16px; color: var(--text2); font-size: 12px; margin: 4px 0 8px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>吸盘吸附 / 放置时间交互报告</h1>
+  <p class="sub" id="sub"></p>
+
+  <div class="tiles" id="tiles"></div>
+
+  <div class="card note">
+    <h2>判定口径</h2>
+    <ul id="rules">
+      <li><b>吸附时刻（pick）</b>：气压 <code>fluid_pressure</code> 从上往下穿过 <b id="thr"></b>（与 retime_lerobot.py 的 <code>--pick-pressure</code> 一致）。个别箱子吸力弱、气压停在阈值附近时，改用 <b id="thrw"></b> 兜底，表中标记为“弱吸附”。吸盘真空常开，空吸时气压约 -16，吸住箱子后降到 -35 ~ -78。</li>
+      <li><b>放置时刻（place）</b>：动作 <code>action.suction_on</code> 从 1 变 0（释放指令）；<b>放置结束</b> = 它恢复为 1。状态 <code>suction_do_ch3</code> 一般滞后 2~3 帧。</li>
+      <li><b>吸附持续</b> = 放置时刻 − 吸附时刻（箱子被吸住、搬运的时长）；<b>释放脉冲</b> = 放置结束 − 放置时刻；<b>泄压用时</b> = 放置时刻 → 气压回升到 &gt; -5。</li>
+      <li>时间默认是本数据集（加速后）的时间轴，括号/悬浮提示里的“原始”是 <code>frame_map.parquet</code> 中对应的原始采集时间。</li>
+    </ul>  </div>
+
+  <div class="card">
+    <h2>各 episode 汇总 <span class="note">（点击行切换 episode）</span></h2>
+    <div class="tw"><table id="epTable"></table></div>
+  </div>
+
+  <div class="card">
+    <div class="ctrl">
+      <label>Episode <select id="epSel"></select></label>
+      <label><input type="checkbox" id="cbHold" checked> <span class="sw" style="background:var(--hold)"></span>吸附区间</label>
+      <label><input type="checkbox" id="cbPlace" checked> <span class="sw" style="background:var(--place)"></span>放置脉冲</label>
+      <label><input type="checkbox" id="cbProt" checked> <span class="sw" style="background:var(--prot)"></span>retime 保护窗口（= PNG 橙色，画在上 3 栏）</label>
+      <label><input type="checkbox" id="cbLines" checked> 吸附 / 放置时刻竖线（贯穿全图）</label>
+      <button id="btnReset">显示全程</button>
+    </div>
+    <h2 id="cycTitle"></h2>
+    <p class="note">点击某一行，下方图表会缩放到该次取放；图中可框选缩放、双击复位，所有子图共享时间轴。</p>
+    <div class="tw" style="max-height:360px;overflow-y:auto"><table id="cycTable"></table></div>
+  </div>
+
+  <div class="card">
+    <div id="plot"></div>
+  </div>
+</main>
+
+<script>
+const DATA = /*__DATA__*/null;
+const M = DATA.meta, EPS = DATA.episodes;
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const f = (v, d = 2) => v == null ? "—" : Number(v).toFixed(d);
+const mean = a => a.length ? a.reduce((x, y) => x + y, 0) / a.length : null;
+const nums = a => a.filter(v => v != null);
+
+document.getElementById("sub").textContent = `${M.name} · 任务：${M.task.join(" / ")} · ${M.fps} Hz · ${M.path}`;
+if (M.rules) document.getElementById("rules").innerHTML = M.rules.map(r => `<li>${r}</li>`).join("");
+document.getElementById("thr") && (document.getElementById("thr").textContent = `${M.pick_pressure}`);
+document.getElementById("thrw") && (document.getElementById("thrw").textContent = `${M.weak_pressure}`);
+if (M.title) { document.querySelector("h1").textContent = M.title; document.title = M.title; }
+if (!EPS.some(e => e.prot && e.prot.length)) document.getElementById("cbProt").parentElement.style.display = "none";
+
+// ---------- tiles ----------
+const allC = EPS.flatMap(e => e.cycles);
+const holds = nums(allC.map(c => c.hold_s)), rels = nums(allC.map(c => c.release_s));
+const tiles = [
+  ["Episode 数", EPS.length, ""],
+  ["取放次数", allC.length, "次"],
+  ["平均吸附持续", f(mean(holds)), "s"],
+  ["吸附持续范围", `${f(Math.min(...holds), 1)}–${f(Math.max(...holds), 1)}`, "s"],
+  ["平均释放脉冲", f(mean(rels)), "s"],
+  ["平均泄压用时", f(mean(nums(allC.map(c => c.vac_release_s)))), "s"],
+];
+if (M.total) tiles.push(["总时长 原始→加速", `${f(M.total.src_s / 60, 1)}→${f(M.total.s / 60, 1)}`, "min"],
+                        ["整体加速比", f(M.total.speedup), "×"]);
+if (M.extra_tiles) tiles.push(...M.extra_tiles);
+document.getElementById("tiles").innerHTML = tiles.map(([k, v, u]) =>
+  `<div class="tile"><div class="k">${k}</div><div class="v">${v}<span class="u">${u}</span></div></div>`).join("");
+
+// ---------- episode table ----------
+const epTable = document.getElementById("epTable");
+epTable.innerHTML = `<thead><tr><th>Episode</th><th>时长 s</th><th>原始时长 s</th><th>加速比</th><th>取放次数</th>
+  <th>平均吸附 s</th><th>最短吸附 s</th><th>最长吸附 s</th><th>平均释放 s</th><th>平均泄压 s</th><th>吸附总时长 s</th><th>吸附占比</th></tr></thead><tbody>` +
+  EPS.map((e, i) => {
+    const h = nums(e.cycles.map(c => c.hold_s)), sum = h.reduce((a, b) => a + b, 0);
+    return `<tr data-i="${i}"><td>${e.label || "ep" + String(e.ep).padStart(3, "0")}</td><td>${f(e.dur, 1)}</td><td>${f(e.src_dur, 1)}</td>
+      <td>${e.speedup ? f(e.speedup) + "×" : "—"}</td><td>${e.cycles.length}</td><td>${f(mean(h))}</td>
+      <td>${h.length ? f(Math.min(...h)) : "—"}</td><td>${h.length ? f(Math.max(...h)) : "—"}</td>
+      <td>${f(mean(e.cycles.map(c => c.release_s)))}</td><td>${f(mean(nums(e.cycles.map(c => c.vac_release_s))))}</td>
+      <td>${f(sum, 1)}</td><td>${f(100 * sum / e.dur, 0)}%</td></tr>`;
+  }).join("") + "</tbody>";
+epTable.addEventListener("click", ev => { const tr = ev.target.closest("tr[data-i]"); if (tr) selectEp(+tr.dataset.i); });
+
+const epSel = document.getElementById("epSel");
+epSel.innerHTML = EPS.map((e, i) => `<option value="${i}">${e.label || "ep" + String(e.ep).padStart(3, "0")}</option>`).join("");
+epSel.onchange = () => selectEp(+epSel.value);
+["cbHold", "cbPlace", "cbProt", "cbLines"].forEach(id => document.getElementById(id).onchange = () => Plotly.relayout("plot", { shapes: shapes(EPS[cur]) }));
+document.getElementById("btnReset").onclick = () => zoom(null);
+
+// ---------- plot ----------
+// panels are shown only when the episode has that data (a raw bag has no retime speedup / protected windows)
+const ALL_PANELS = [
+  { k: "sdot", title: "speedup ds/dτ（= PNG 第 1 栏）", w: 0.11, has: e => e.sdot },
+  { k: "v", title: M.vutil_title || "v / Vmax（= PNG 第 2 栏）", w: 0.13, has: e => e.vutil },
+  { k: "a", title: M.autil_title || "a / Amax（= PNG 第 3 栏，由 state 速度差分）", w: 0.13, has: e => e.autil },
+  { k: "p", title: "气压 fluid_pressure", w: 0.13, has: e => e.pres },
+  { k: "s", title: "吸盘信号 (0/1)", w: 0.06, has: e => e.suc_a },
+  { k: "j", title: "关节角 (deg)", w: 0.20, has: e => e.joints },
+  { k: "f", title: "法兰位置 (m)", w: 0.12, has: e => e.flange },
+  { k: "b", title: M.base_title || "底盘速度", w: 0.12, has: e => e.base },
+];
+const JC = [1, 2, 3, 8, 7, 4];   // joint colours in the same order as matplotlib's tab10 in the PNG (blue, orange, green, red, purple, …)
+const SIG = M.signal_names || ["action.suction_on", "state.suction_do (×0.9 错开)"];
+let cur = 0;
+
+function layoutPanels(e) {
+  const P = ALL_PANELS.filter(p => p.has(e));
+  const gap = 0.022, sw = P.reduce((s, p) => s + p.w, 0), total = 1 - gap * (P.length - 1);
+  let top = 1;
+  const ax = {}, dom = {};
+  P.forEach((p, i) => {
+    const h = p.w / sw * total;
+    dom[p.k] = [top - h, top]; top -= h + gap;
+    ax[p.k] = i ? `y${i + 1}` : "y";
+  });
+  return { P, ax, dom };
+}
+
+function shapes(e) {
+  const out = [], t = e.t, { P, ax, dom } = layoutPanels(e);
+  const pngKeys = P.filter(p => "sdot v a".includes(p.k)).map(p => p.k);
+  const hasProt = e.prot && e.prot.length;
+  // protected windows on the PNG-style panels; hold/place on the suction panels (whole plot if no retime info)
+  const topY = pngKeys.length ? [dom[pngKeys[pngKeys.length - 1]][0], dom[pngKeys[0]][1]] : null;
+  const botY = hasProt && dom.p ? [0, dom.p[1]] : [0, 1];
+  const add = (sp, col, [y0, y1]) => sp.forEach(([a, b]) => out.push({ type: "rect", xref: "x", yref: "paper", x0: t[a], x1: t[b],
+    y0, y1, fillcolor: col, line: { width: 0 }, layer: "below" }));
+  const vline = (x, col) => out.push({ type: "line", xref: "x", yref: "paper", x0: x, x1: x, y0: 0, y1: 1,
+    line: { color: col, width: 1, dash: "dot" }, layer: "below" });
+  if (hasProt && topY && document.getElementById("cbProt").checked) add(e.prot, css("--prot"), topY);
+  if (document.getElementById("cbHold").checked) add(e.hold_spans, css("--hold"), botY);
+  if (document.getElementById("cbPlace").checked) add(e.place_spans, css("--place"), botY);
+  if (document.getElementById("cbLines").checked) e.cycles.forEach(c => {
+    if (c.pick_t != null) vline(c.pick_t, css("--s1"));
+    vline(c.place_t, css("--s5"));
+  });
+  if (ax.p) out.push({ type: "line", xref: "paper", yref: ax.p, x0: 0, x1: 1, y0: M.pick_pressure, y1: M.pick_pressure,
+    line: { color: css("--muted"), width: 1, dash: "dot" } });
+  ["v", "a"].filter(k => ax[k]).forEach(k => [1, -1].forEach(v => out.push({ type: "line", xref: "paper", yref: ax[k], x0: 0, x1: 1, y0: v, y1: v,
+    line: { color: css("--s8"), width: 1, dash: "dash" } })));
+  (e.cut_t || []).forEach(tc => out.push({ type: "line", xref: "x", yref: "paper", x0: tc, x1: tc, y0: 0, y1: 1,
+    line: { color: css("--muted"), width: 1, dash: "dot" } }));
+  return out;
+}
+
+function draw(e) {
+  const S = i => css(`--s${i}`), t = e.t, { P, ax, dom } = layoutPanels(e);
+  const src = e.src_t ? e.src_t.map(v => `原始 ${v.toFixed(2)} s`) : null;
+  const tr = [];
+  const line = (y, name, col, a, extra = {}) => tr.push(Object.assign({
+    type: "scatter", mode: "lines", x: t, y, name, xaxis: "x", yaxis: a, line: { color: col, width: 1.6 },
+    customdata: src, hovertemplate: `%{y:.3f}` + (src ? " · %{customdata}" : "") + `<extra>${name}</extra>`,
+  }, extra));
+  if (ax.sdot) line(e.sdot, "speedup ds/dτ", css("--text"), ax.sdot, { line: { color: css("--text"), width: 1.2 } });
+  if (ax.v) e.vutil.forEach((y, i) => line(y, `J${i + 1}`, S(JC[i]), ax.v, { legendgroup: `j${i}`, line: { color: S(JC[i]), width: 1.2 } }));
+  if (ax.a) e.autil.forEach((y, i) => line(y, `J${i + 1} a/Amax`, S(JC[i]), ax.a, { legendgroup: `j${i}`, showlegend: false, line: { color: S(JC[i]), width: 1 } }));
+  line(e.pres, "气压", S(1), ax.p);
+  line(e.suc_a, SIG[0], S(2), ax.s, { line: { color: S(2), width: 2, shape: "hv" } });
+  line(e.suc_s.map(v => v * 0.9), SIG[1], S(7), ax.s, { line: { color: S(7), width: 1.6, shape: "hv", dash: "dot" } });
+  e.joints.forEach((y, i) => line(y, `J${i + 1} 角度`, S(JC[i]), ax.j, { legendgroup: `j${i}`, showlegend: !ax.v }));
+  ["x", "y", "z"].forEach((n, i) => line(e.flange[i], `flange_${n}`, S([1, 2, 3][i]), ax.f));
+  (M.base_names || ["base_vx", "base_vy", "base_wz"]).forEach((n, i) => line(e.base[i], n, S([1, 2, 3][i]), ax.b));
+
+  // pick / place markers on pressure panel
+  const pk = e.cycles.filter(c => c.pick != null);
+  tr.push({ type: "scatter", mode: "markers", x: pk.map(c => c.pick_t), y: pk.map(c => e.pres[c.pick]), xaxis: "x", yaxis: ax.p,
+    name: "吸附时刻", marker: { symbol: "triangle-down", size: 10, color: S(1), line: { color: css("--surface"), width: 2 } },
+    text: pk.map(c => `#${e.cycles.indexOf(c) + 1} 吸附 ${c.pick_t.toFixed(2)} s` + (c.pick_src != null ? `（原始 ${c.pick_src.toFixed(2)} s）` : "") + `<br>吸附持续 ${f(c.hold_s)} s`),
+    hovertemplate: "%{text}<extra></extra>" });
+  tr.push({ type: "scatter", mode: "markers", x: e.cycles.map(c => c.place_t), y: e.cycles.map(c => e.pres[c.place]), xaxis: "x", yaxis: ax.p,
+    name: "放置时刻", marker: { symbol: "triangle-up", size: 10, color: S(2), line: { color: css("--surface"), width: 2 } },
+    text: e.cycles.map((c, i) => `#${i + 1} 放置 ${c.place_t.toFixed(2)} s` + (c.place_src != null ? `（原始 ${c.place_src.toFixed(2)} s）` : "") + `<br>释放脉冲 ${f(c.release_s)} s · 泄压 ${f(c.vac_release_s)} s`),
+    hovertemplate: "%{text}<extra></extra>" });
+
+  const txt = css("--text2"), grid = css("--grid"), last = ax[P[P.length - 1].k];
+  const layout = {
+    paper_bgcolor: css("--surface"), plot_bgcolor: css("--surface"),
+    font: { color: txt, size: 12, family: getComputedStyle(document.body).fontFamily },
+    margin: { l: 64, r: 16, t: 90, b: 40 }, hovermode: "x", hoverlabel: { namelength: -1 },
+    legend: { orientation: "h", y: 1.012, yanchor: "bottom", x: 0, font: { size: 11 } },
+    xaxis: { anchor: last, title: { text: M.xlabel || "new time (s)（加速后时间，与 PNG 横轴一致）" }, gridcolor: grid, zeroline: false, showspikes: true, spikemode: "across", spikethickness: 1, spikecolor: css("--muted"), spikedash: "solid" },
+    shapes: shapes(e), annotations: [],
+  };
+  P.forEach(p => {
+    const k = ax[p.k].replace("y", "yaxis");
+    layout[k] = { domain: dom[p.k], gridcolor: grid, zerolinecolor: css("--border"), anchor: "x", fixedrange: false };
+    layout.annotations.push({ text: `<b>${p.title}</b>`, xref: "paper", yref: "paper", x: 0, y: dom[p.k][1], xanchor: "left", yanchor: "bottom", showarrow: false, font: { size: 12, color: css("--text") } });
+  });
+  if (ax.s) Object.assign(layout[ax.s.replace("y", "yaxis")], { range: [-0.15, 1.15], tickvals: [0, 1] });
+  if (ax.a) layout[ax.a.replace("y", "yaxis")].range = [-2, 2];
+  document.getElementById("plot").style.height = `${Math.round(2000 * P.reduce((s, p) => s + p.w, 0) / 1.0)}px`;
+  Plotly.react("plot", tr, layout, { responsive: true, displaylogo: false, scrollZoom: false });
+}
+
+function zoom(c) {
+  if (!c) return Plotly.relayout("plot", { "xaxis.autorange": true });
+  const a = (c.pick_t ?? c.place_t) - 2, b = c.place_end_t + 2;
+  Plotly.relayout("plot", { "xaxis.range": [a, b] });
+}
+
+function cycTable(e) {
+  document.getElementById("cycTitle").textContent = `${e.label || "ep" + String(e.ep).padStart(3, "0")} 每次取放明细（${e.cycles.length} 次）` +
+    (e.orphan_picks.length ? ` · 另有 ${e.orphan_picks.length} 次吸附后未检测到放置` : "");
+  const o = v => v == null ? "" : `<span class="note">（${v.toFixed(2)}）</span>`;
+  const srcCol = e.src_t ? "（原始）" : "";
+  document.getElementById("cycTable").innerHTML = `<thead><tr><th>#</th><th>吸附时刻 s${srcCol}</th><th>放置时刻 s${srcCol}</th><th>放置结束 s${srcCol}</th>
+    <th>吸附持续 s</th><th>释放脉冲 s</th><th>泄压用时 s</th><th>峰值真空</th><th>距上次放置 s</th></tr></thead><tbody>` +
+    e.cycles.map((c, i) => {
+      const gap = c.pick_t != null && i ? c.pick_t - e.cycles[i - 1].place_end_t : null;
+      return `<tr data-i="${i}"><td>${i + 1}</td><td>${f(c.pick_t)}${o(c.pick_src)}</td><td>${f(c.place_t)}${o(c.place_src)}</td>
+      <td>${f(c.place_end_t)}${o(c.place_end_src)}</td><td><b>${f(c.hold_s)}</b></td><td>${f(c.release_s)}</td><td>${f(c.vac_release_s)}</td>
+      <td>${f(c.peak_vac, 0)}${c.weak ? ' <span class="note">弱吸附</span>' : ""}</td><td class="${gap == null ? "muted" : ""}">${f(gap)}</td></tr>`;
+    }).join("") + "</tbody>";
+}
+document.getElementById("cycTable").addEventListener("click", ev => {
+  const tr = ev.target.closest("tr[data-i]"); if (!tr) return;
+  document.querySelectorAll("#cycTable tr").forEach(r => r.classList.toggle("sel", r === tr));
+  zoom(EPS[cur].cycles[+tr.dataset.i]);
+});
+
+function selectEp(i) {
+  cur = i; epSel.value = i;
+  document.querySelectorAll("#epTable tbody tr").forEach(r => r.classList.toggle("sel", +r.dataset.i === i));
+  cycTable(EPS[i]); draw(EPS[i]);
+}
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => draw(EPS[cur]));
+selectEp(0);
+</script>
+</body>
+</html>

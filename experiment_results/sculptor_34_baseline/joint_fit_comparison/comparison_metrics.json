@@ -1,0 +1,2276 @@
+{
+  "selected_episodes": [
+    0,
+    9,
+    22,
+    23
+  ],
+  "worst_original_node_episode": 23,
+  "code_sha256": "77790c327b83976cfc2592137784ed925faea2199e6647b9bf2947ebf0dcf63c",
+  "params": {
+    "src": [
+      "/mnt/data/leilv/openpi_sculptor/dataset/temp/sculptor_sku_a_b_20261116/datasets/lerobot_20261102_V19_20261102-gpu-hefei-poc_sft_6f5ca00c"
+    ],
+    "out_root": "/root/acce_exp/runs/sculptor_34_baseline/output",
+    "frame_step": 3.0,
+    "vmax_deg": [
+      63,
+      36,
+      90,
+      108,
+      162,
+      162
+    ],
+    "amax_deg": [
+      120,
+      60,
+      90,
+      96,
+      192,
+      192
+    ],
+    "margin": 0.98,
+    "guard_pre": 0.8,
+    "guard_post": 0.8,
+    "max_expand": 1.0,
+    "pick_pressure": -30.0,
+    "smooth_lam": 0.0001,
+    "blend": 0.5,
+    "subdiv": 4,
+    "jmax_deg": null,
+    "base_axy": null,
+    "base_aw": null,
+    "base_smooth_lam": 0.0001,
+    "no_dwell_cut": false,
+    "dwell_lin": 0.01,
+    "dwell_ang": 0.1,
+    "dwell_base_v": 0.02,
+    "dwell_base_w": 0.05,
+    "dwell_min": 0.3,
+    "workers": 4,
+    "encoder": "x264",
+    "qp": 18,
+    "jobs": 3,
+    "verify": 3,
+    "overwrite": false,
+    "no_plot": false
+  },
+  "episodes": [
+    {
+      "episode": 0,
+      "max_abs_error_deg": 0.05603795648312398,
+      "mean_abs_error_deg": 0.009314438097459297,
+      "p99_abs_error_deg": 0.0330126987525426,
+      "max_error_joint": 1,
+      "max_error_source_time": 1.6333333333333333,
+      "max_base_fit_error_all_nodes_deg": 0.05603795648312398,
+      "max_dense_vs_linear_reference_deg": 0.05603795648312398,
+      "max_local_envelope_excess_deg": 0.056037956483117615,
+      "max_global_range_excess_deg": 0.010070940394668909,
+      "protected_nodes": 96,
+      "unprotected_nodes": 604,
+      "joints": [
+        {
+          "joint": 1,
+          "max_abs_error_deg": 0.05603795648312398,
+          "mean_abs_error_deg": 0.010281548148431827,
+          "p99_abs_error_deg": 0.03535401152312418,
+          "max_local_envelope_excess_deg": 0.056037956483117615,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 2,
+          "max_abs_error_deg": 0.032372568372927416,
+          "mean_abs_error_deg": 0.006736299148323805,
+          "p99_abs_error_deg": 0.02880154370718317,
+          "max_local_envelope_excess_deg": 0.03221210295983262,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 3,
+          "max_abs_error_deg": 0.03770621264057392,
+          "mean_abs_error_deg": 0.008420967019665609,
+          "p99_abs_error_deg": 0.03131104238402801,
+          "max_local_envelope_excess_deg": 0.03770621264057392,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 4,
+          "max_abs_error_deg": 0.03791842135172104,
+          "mean_abs_error_deg": 0.010098490673397064,
+          "p99_abs_error_deg": 0.034006279823218015,
+          "max_local_envelope_excess_deg": 0.03791842135171627,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 5,
+          "max_abs_error_deg": 0.04493130294655909,
+          "mean_abs_error_deg": 0.010254730130077416,
+          "p99_abs_error_deg": 0.03215989890553443,
+          "max_local_envelope_excess_deg": 0.03962550702575511,
+          "max_global_range_excess_deg": 0.005410781068206897
+        },
+        {
+          "joint": 6,
+          "max_abs_error_deg": 0.04777866287387802,
+          "mean_abs_error_deg": 0.010094593464860057,
+          "p99_abs_error_deg": 0.034001629619116756,
+          "max_local_envelope_excess_deg": 0.040291679498762355,
+          "max_global_range_excess_deg": 0.010070940394668909
+        }
+      ],
+      "reconstruction_max_error_deg": 6.828447192935932e-06
+    },
+    {
+      "episode": 1,
+      "max_abs_error_deg": 0.09278665842833783,
+      "mean_abs_error_deg": 0.008449080988456715,
+      "p99_abs_error_deg": 0.033865185787911034,
+      "max_error_joint": 4,
+      "max_error_source_time": 0.06666666666666667,
+      "max_base_fit_error_all_nodes_deg": 0.054109365780057705,
+      "max_dense_vs_linear_reference_deg": 0.09278665842833783,
+      "max_local_envelope_excess_deg": 0.08316424378971486,
+      "max_global_range_excess_deg": 0.007973234211491799,
+      "protected_nodes": 93,
+      "unprotected_nodes": 650,
+      "joints": [
+        {
+          "joint": 1,
+          "max_abs_error_deg": 0.036115714396923036,
+          "mean_abs_error_deg": 0.0064891210399011055,
+          "p99_abs_error_deg": 0.028330468358053543,
+          "max_local_envelope_excess_deg": 0.036115714396923036,
+          "max_global_range_excess_deg": 0.001853897001683253
+        },
+        {
+          "joint": 2,
+          "max_abs_error_deg": 0.035711147777944284,
+          "mean_abs_error_deg": 0.00785775335096706,
+          "p99_abs_error_deg": 0.027861289759106206,
+          "max_local_envelope_excess_deg": 0.03152344692570681,
+          "max_global_range_excess_deg": 0.005318504275875232
+        },
+        {
+          "joint": 3,
+          "max_abs_error_deg": 0.03801459792664159,
+          "mean_abs_error_deg": 0.008543999505890255,
+          "p99_abs_error_deg": 0.03530176114837188,
+          "max_local_envelope_excess_deg": 0.03801459792664159,
+          "max_global_range_excess_deg": 0.0060032254869215864
+        },
+        {
+          "joint": 4,
+          "max_abs_error_deg": 0.09278665842833783,
+          "mean_abs_error_deg": 0.008541274717522654,
+          "p99_abs_error_deg": 0.040347664319736035,
+          "max_local_envelope_excess_deg": 0.08316424378971486,
+          "max_global_range_excess_deg": 0.00435005903383282
+        },
+        {
+          "joint": 5,
+          "max_abs_error_deg": 0.09035965705537403,
+          "mean_abs_error_deg": 0.00937375997923888,
+          "p99_abs_error_deg": 0.034409149265637276,
+          "max_local_envelope_excess_deg": 0.0772454934296168,
+          "max_global_range_excess_deg": 0.0005439708159181656
+        },
+        {
+          "joint": 6,
+          "max_abs_error_deg": 0.05711567840667523,
+          "mean_abs_error_deg": 0.009888577337220336,
+          "p99_abs_error_deg": 0.03410817543708845,
+          "max_local_envelope_excess_deg": 0.05711567840667523,
+          "max_global_range_excess_deg": 0.007973234211491799
+        }
+      ],
+      "reconstruction_max_error_deg": 6.760232106460837e-06
+    },
+    {
+      "episode": 2,
+      "max_abs_error_deg": 0.06587228341573154,
+      "mean_abs_error_deg": 0.008641666190344746,
+      "p99_abs_error_deg": 0.035755635172766226,
+      "max_error_joint": 6,
+      "max_error_source_time": 0.13333333333333333,
+      "max_base_fit_error_all_nodes_deg": 0.04428096374451774,
+      "max_dense_vs_linear_reference_deg": 0.06587228341573154,
+      "max_local_envelope_excess_deg": 0.060063388179743465,
+      "max_global_range_excess_deg": 0.007217918227478838,
+      "protected_nodes": 97,
+      "unprotected_nodes": 488,
+      "joints": [
+        {
+          "joint": 1,
+          "max_abs_error_deg": 0.040858370912662284,
+          "mean_abs_error_deg": 0.008536933101732161,
+          "p99_abs_error_deg": 0.03316162366131902,
+          "max_local_envelope_excess_deg": 0.03824823113705724,
+          "max_global_range_excess_deg": 0.005923648690371515
+        },
+        {
+          "joint": 2,
+          "max_abs_error_deg": 0.046902223536716255,
+          "mean_abs_error_deg": 0.007288204702730442,
+          "p99_abs_error_deg": 0.03585826372984642,
+          "max_local_envelope_excess_deg": 0.041076834749880026,
+          "max_global_range_excess_deg": 0.0017962024873317993
+        },
+        {
+          "joint": 3,
+          "max_abs_error_deg": 0.03538339496825038,
+          "mean_abs_error_deg": 0.007353827717465837,
+          "p99_abs_error_deg": 0.029702657193618382,
+          "max_local_envelope_excess_deg": 0.03035095367658161,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 4,
+          "max_abs_error_deg": 0.04418822290225844,
+          "mean_abs_error_deg": 0.009331944253747459,
+          "p99_abs_error_deg": 0.031066024212729162,
+          "max_local_envelope_excess_deg": 0.04418822290225844,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 5,
+          "max_abs_error_deg": 0.047042987810857945,
+          "mean_abs_error_deg": 0.008423178802079318,
+          "p99_abs_error_deg": 0.03566095596504957,
+          "max_local_envelope_excess_deg": 0.04549807703934532,
+          "max_global_range_excess_deg": 0.007217918227478838
+        },
+        {
+          "joint": 6,
+          "max_abs_error_deg": 0.06587228341573154,
+          "mean_abs_error_deg": 0.010915908564313265,
+          "p99_abs_error_deg": 0.04316635292971245,
+          "max_local_envelope_excess_deg": 0.060063388179743465,
+          "max_global_range_excess_deg": 0.002761879946737398
+        }
+      ],
+      "reconstruction_max_error_deg": 6.658601858057912e-06
+    },
+    {
+      "episode": 3,
+      "max_abs_error_deg": 0.06661793137910081,
+      "mean_abs_error_deg": 0.008616545117091211,
+      "p99_abs_error_deg": 0.03553995241415564,
+      "max_error_joint": 6,
+      "max_error_source_time": 0.1,
+      "max_base_fit_error_all_nodes_deg": 0.05511819960154255,
+      "max_dense_vs_linear_reference_deg": 0.06661793137910081,
+      "max_local_envelope_excess_deg": 0.04450672483100708,
+      "max_global_range_excess_deg": 0.011003245754662484,
+      "protected_nodes": 93,
+      "unprotected_nodes": 483,
+      "joints": [
+        {
+          "joint": 1,
+          "max_abs_error_deg": 0.04324640028042594,
+          "mean_abs_error_deg": 0.009598945780007367,
+          "p99_abs_error_deg": 0.03310848798730584,
+          "max_local_envelope_excess_deg": 0.043246400280416396,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 2,
+          "max_abs_error_deg": 0.040271686097373714,
+          "mean_abs_error_deg": 0.006047644969143764,
+          "p99_abs_error_deg": 0.028575386137369485,
+          "max_local_envelope_excess_deg": 0.04008190602993994,
+          "max_global_range_excess_deg": 0.0046490052135129
+        },
+        {
+          "joint": 3,
+          "max_abs_error_deg": 0.03729275014068108,
+          "mean_abs_error_deg": 0.006707927078030538,
+          "p99_abs_error_deg": 0.032548572495883506,
+          "max_local_envelope_excess_deg": 0.03729275014068108,
+          "max_global_range_excess_deg": 0.011003245754662484
+        },
+        {
+          "joint": 4,
+          "max_abs_error_deg": 0.036039958495155996,
+          "mean_abs_error_deg": 0.008204511047370548,
+          "p99_abs_error_deg": 0.031019328376934215,
+          "max_local_envelope_excess_deg": 0.036039958495155996,
+          "max_global_range_excess_deg": 0.003771109070844492
+        },
+        {
+          "joint": 5,
+          "max_abs_error_deg": 0.04176640515821713,
+          "mean_abs_error_deg": 0.009039260533554153,
+          "p99_abs_error_deg": 0.038697108436061375,
+          "max_local_envelope_excess_deg": 0.03859618817770154,
+          "max_global_range_excess_deg": 0.00464189718997841
+        },
+        {
+          "joint": 6,
+          "max_abs_error_deg": 0.06661793137910081,
+          "mean_abs_error_deg": 0.012100981294440894,
+          "p99_abs_error_deg": 0.045187244351500684,
+          "max_local_envelope_excess_deg": 0.04450672483100708,
+          "max_global_range_excess_deg": 0.000995481371963817
+        }
+      ],
+      "reconstruction_max_error_deg": 6.811040093497595e-06
+    },
+    {
+      "episode": 4,
+      "max_abs_error_deg": 0.08094451267168566,
+      "mean_abs_error_deg": 0.007864011569562967,
+      "p99_abs_error_deg": 0.037132778774398946,
+      "max_error_joint": 4,
+      "max_error_source_time": 0.06666666666666667,
+      "max_base_fit_error_all_nodes_deg": 0.06419507745805181,
+      "max_dense_vs_linear_reference_deg": 0.08094451267168566,
+      "max_local_envelope_excess_deg": 0.08094451267168566,
+      "max_global_range_excess_deg": 0.012318005957387234,
+      "protected_nodes": 95,
+      "unprotected_nodes": 310,
+      "joints": [
+        {
+          "joint": 1,
+          "max_abs_error_deg": 0.06419507745805181,
+          "mean_abs_error_deg": 0.012804936233882477,
+          "p99_abs_error_deg": 0.039606927081253865,
+          "max_local_envelope_excess_deg": 0.03973536480278306,
+          "max_global_range_excess_deg": 0.005515084174054368
+        },
+        {
+          "joint": 2,
+          "max_abs_error_deg": 0.04603944531043033,
+          "mean_abs_error_deg": 0.006872105509235003,
+          "p99_abs_error_deg": 0.036012322690668015,
+          "max_local_envelope_excess_deg": 0.031117311625175503,
+          "max_global_range_excess_deg": 0.0025543838503722304
+        },
+        {
+          "joint": 3,
+          "max_abs_error_deg": 0.038786736890278166,
+          "mean_abs_error_deg": 0.006359579748831743,
+          "p99_abs_error_deg": 0.03301758939340637,
+          "max_local_envelope_excess_deg": 0.029467404358269857,
+          "max_global_range_excess_deg": 0.008117603345405507
+        },
+        {
+          "joint": 4,
+          "max_abs_error_deg": 0.08094451267168566,
+          "mean_abs_error_deg": 0.0069258120155494115,
+          "p99_abs_error_deg": 0.03918230687046347,
+          "max_local_envelope_excess_deg": 0.08094451267168566,
+          "max_global_range_excess_deg": 0.010357944484517276
+        },
+        {
+          "joint": 5,
+          "max_abs_error_deg": 0.03907313134409322,
+          "mean_abs_error_deg": 0.00822215689650345,
+          "p99_abs_error_deg": 0.03207405912080772,
+          "max_local_envelope_excess_deg": 0.03695839086003607,
+          "max_global_range_excess_deg": 0.008769570866543388
+        },
+        {
+          "joint": 6,
+          "max_abs_error_deg": 0.03600722834979574,
+          "mean_abs_error_deg": 0.005999479013375725,
+          "p99_abs_error_deg": 0.0236889545779501,
+          "max_local_envelope_excess_deg": 0.0337894251462179,
+          "max_global_range_excess_deg": 0.012318005957387234
+        }
+      ],
+      "reconstruction_max_error_deg": 6.749191128939605e-06
+    },
+    {
+      "episode": 5,
+      "max_abs_error_deg": 0.11173051194624345,
+      "mean_abs_error_deg": 0.009995886104623042,
+      "p99_abs_error_deg": 0.04214911549407001,
+      "max_error_joint": 1,
+      "max_error_source_time": 0.1,
+      "max_base_fit_error_all_nodes_deg": 0.08519708184678877,
+      "max_dense_vs_linear_reference_deg": 0.11173051194625618,
+      "max_local_envelope_excess_deg": 0.11173051194625618,
+      "max_global_range_excess_deg": 0.005852937771101758,
+      "protected_nodes": 92,
+      "unprotected_nodes": 320,
+      "joints": [
+        {
+          "joint": 1,
+          "max_abs_error_deg": 0.11173051194624345,
+          "mean_abs_error_deg": 0.013869291202634509,
+          "p99_abs_error_deg": 0.08264940300267835,
+          "max_local_envelope_excess_deg": 0.11173051194625618,
+          "max_global_range_excess_deg": 0.004234335802771246
+        },
+        {
+          "joint": 2,
+          "max_abs_error_deg": 0.09073206852314307,
+          "mean_abs_error_deg": 0.009060464021439663,
+          "p99_abs_error_deg": 0.0581038701276461,
+          "max_local_envelope_excess_deg": 0.08967060863497675,
+          "max_global_range_excess_deg": 0.0015251154186498072
+        },
+        {
+          "joint": 3,
+          "max_abs_error_deg": 0.03577371005641635,
+          "mean_abs_error_deg": 0.008350261887502838,
+          "p99_abs_error_deg": 0.03482316920457497,
+          "max_local_envelope_excess_deg": 0.03566941349651936,
+          "max_global_range_excess_deg": 0.0017548227167146662
+        },
+        {
+          "joint": 4,
+          "max_abs_error_deg": 0.03190167542500207,
+          "mean_abs_error_deg": 0.008578883095592862,
+          "p99_abs_error_deg": 0.02691865644312108,
+          "max_local_envelope_excess_deg": 0.0319016754249964,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 5,
+          "max_abs_error_deg": 0.047431797838892245,
+          "mean_abs_error_deg": 0.010694188347831054,
+          "p99_abs_error_deg": 0.038647588272584674,
+          "max_local_envelope_excess_deg": 0.04185221327835855,
+          "max_global_range_excess_deg": 0.0003761417585544137
+        },
+        {
+          "joint": 6,
+          "max_abs_error_deg": 0.09429384124964674,
+          "mean_abs_error_deg": 0.009422228072737326,
+          "p99_abs_error_deg": 0.06186020781560066,
+          "max_local_envelope_excess_deg": 0.08516451397947876,
+          "max_global_range_excess_deg": 0.005852937771101758
+        }
+      ],
+      "reconstruction_max_error_deg": 6.817529010269841e-06
+    },
+    {
+      "episode": 6,
+      "max_abs_error_deg": 0.0533580195907163,
+      "mean_abs_error_deg": 0.010620596195367458,
+      "p99_abs_error_deg": 0.037552664344972085,
+      "max_error_joint": 4,
+      "max_error_source_time": 8.366666666666667,
+      "max_base_fit_error_all_nodes_deg": 0.11869358358968246,
+      "max_dense_vs_linear_reference_deg": 0.0533580195907163,
+      "max_local_envelope_excess_deg": 0.045569576600004755,
+      "max_global_range_excess_deg": 0.010440617812985128,
+      "protected_nodes": 109,
+      "unprotected_nodes": 356,
+      "joints": [
+        {
+          "joint": 1,
+          "max_abs_error_deg": 0.04182309399486105,
+          "mean_abs_error_deg": 0.010615084386066015,
+          "p99_abs_error_deg": 0.03904796173996118,
+          "max_local_envelope_excess_deg": 0.04182309399486105,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 2,
+          "max_abs_error_deg": 0.04764208792855115,
+          "mean_abs_error_deg": 0.009243090212584092,
+          "p99_abs_error_deg": 0.03596446795066798,
+          "max_local_envelope_excess_deg": 0.04116435220292824,
+          "max_global_range_excess_deg": 0.006144626203639183
+        },
+        {
+          "joint": 3,
+          "max_abs_error_deg": 0.042623314432524005,
+          "mean_abs_error_deg": 0.009193568292450055,
+          "p99_abs_error_deg": 0.03240737299627412,
+          "max_local_envelope_excess_deg": 0.037543470241208014,
+          "max_global_range_excess_deg": 0.005872119290787019
+        },
+        {
+          "joint": 4,
+          "max_abs_error_deg": 0.0533580195907163,
+          "mean_abs_error_deg": 0.011707368839754692,
+          "p99_abs_error_deg": 0.03979115765530411,
+          "max_local_envelope_excess_deg": 0.045569576600004755,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 5,
+          "max_abs_error_deg": 0.03908186848307788,
+          "mean_abs_error_deg": 0.011318673986302714,
+          "p99_abs_error_deg": 0.033757595977485025,
+          "max_local_envelope_excess_deg": 0.03908186848307788,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 6,
+          "max_abs_error_deg": 0.04040378260978116,
+          "mean_abs_error_deg": 0.011645791455047188,
+          "p99_abs_error_deg": 0.03632230444825717,
+          "max_local_envelope_excess_deg": 0.04040378260978116,
+          "max_global_range_excess_deg": 0.010440617812985128
+        }
+      ],
+      "reconstruction_max_error_deg": 6.794657412555501e-06
+    },
+    {
+      "episode": 7,
+      "max_abs_error_deg": 0.058396914517484994,
+      "mean_abs_error_deg": 0.010017361586064217,
+      "p99_abs_error_deg": 0.03658439487595222,
+      "max_error_joint": 3,
+      "max_error_source_time": 0.06666666666666667,
+      "max_base_fit_error_all_nodes_deg": 0.047421228871474014,
+      "max_dense_vs_linear_reference_deg": 0.058396914517484994,
+      "max_local_envelope_excess_deg": 0.05466170327645717,
+      "max_global_range_excess_deg": 0.01143213736823951,
+      "protected_nodes": 100,
+      "unprotected_nodes": 460,
+      "joints": [
+        {
+          "joint": 1,
+          "max_abs_error_deg": 0.039133631282982716,
+          "mean_abs_error_deg": 0.009762838684742847,
+          "p99_abs_error_deg": 0.03600561812473759,
+          "max_local_envelope_excess_deg": 0.03831873113652814,
+          "max_global_range_excess_deg": 0.004219537026521468
+        },
+        {
+          "joint": 2,
+          "max_abs_error_deg": 0.05096757389908691,
+          "mean_abs_error_deg": 0.008866217257922065,
+          "p99_abs_error_deg": 0.036050552582060316,
+          "max_local_envelope_excess_deg": 0.0434828802584685,
+          "max_global_range_excess_deg": 0.004877732215645981
+        },
+        {
+          "joint": 3,
+          "max_abs_error_deg": 0.058396914517484994,
+          "mean_abs_error_deg": 0.00954075125099055,
+          "p99_abs_error_deg": 0.035188947661464916,
+          "max_local_envelope_excess_deg": 0.05466170327645717,
+          "max_global_range_excess_deg": 0.00627882947295117
+        },
+        {
+          "joint": 4,
+          "max_abs_error_deg": 0.05271546986014149,
+          "mean_abs_error_deg": 0.010049491279709678,
+          "p99_abs_error_deg": 0.03584863498924906,
+          "max_local_envelope_excess_deg": 0.05271546986013487,
+          "max_global_range_excess_deg": 0.009305236392243621
+        },
+        {
+          "joint": 5,
+          "max_abs_error_deg": 0.040418752667059854,
+          "mean_abs_error_deg": 0.010704684057353083,
+          "p99_abs_error_deg": 0.03638312922361439,
+          "max_local_envelope_excess_deg": 0.04041875266705349,
+          "max_global_range_excess_deg": 0.0031887175844297682
+        },
+        {
+          "joint": 6,
+          "max_abs_error_deg": 0.047421228871474014,
+          "mean_abs_error_deg": 0.011180186985667076,
+          "p99_abs_error_deg": 0.03861410881704164,
+          "max_local_envelope_excess_deg": 0.04584931753480683,
+          "max_global_range_excess_deg": 0.01143213736823951
+        }
+      ],
+      "reconstruction_max_error_deg": 6.68661890624705e-06
+    },
+    {
+      "episode": 8,
+      "max_abs_error_deg": 0.057537988957120874,
+      "mean_abs_error_deg": 0.008780275215724177,
+      "p99_abs_error_deg": 0.034140381830141085,
+      "max_error_joint": 6,
+      "max_error_source_time": 9.733333333333333,
+      "max_base_fit_error_all_nodes_deg": 0.057537988957120874,
+      "max_dense_vs_linear_reference_deg": 0.057537988957117696,
+      "max_local_envelope_excess_deg": 0.0575379889570509,
+      "max_global_range_excess_deg": 0.013152174184140419,
+      "protected_nodes": 97,
+      "unprotected_nodes": 464,
+      "joints": [
+        {
+          "joint": 1,
+          "max_abs_error_deg": 0.037605812236562,
+          "mean_abs_error_deg": 0.008245278580581751,
+          "p99_abs_error_deg": 0.03053466979059703,
+          "max_local_envelope_excess_deg": 0.0335086629228039,
+          "max_global_range_excess_deg": 0.002060679902482785
+        },
+        {
+          "joint": 2,
+          "max_abs_error_deg": 0.045322513171561274,
+          "mean_abs_error_deg": 0.007534388138526409,
+          "p99_abs_error_deg": 0.02844809356844029,
+          "max_local_envelope_excess_deg": 0.025624941393886054,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 3,
+          "max_abs_error_deg": 0.035884654975869325,
+          "mean_abs_error_deg": 0.008333403008337886,
+          "p99_abs_error_deg": 0.03125155080972469,
+          "max_local_envelope_excess_deg": 0.035884654975869325,
+          "max_global_range_excess_deg": 0.013152174184140419
+        },
+        {
+          "joint": 4,
+          "max_abs_error_deg": 0.031462206529385445,
+          "mean_abs_error_deg": 0.00801179205419174,
+          "p99_abs_error_deg": 0.027605133648779777,
+          "max_local_envelope_excess_deg": 0.031462206529385445,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 5,
+          "max_abs_error_deg": 0.03969072276106422,
+          "mean_abs_error_deg": 0.008655820567370551,
+          "p99_abs_error_deg": 0.030485044500337823,
+          "max_local_envelope_excess_deg": 0.03773894735143992,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 6,
+          "max_abs_error_deg": 0.057537988957120874,
+          "mean_abs_error_deg": 0.011900968945336727,
+          "p99_abs_error_deg": 0.04183789848340734,
+          "max_local_envelope_excess_deg": 0.0575379889570509,
+          "max_global_range_excess_deg": 0.006834413507056191
+        }
+      ],
+      "reconstruction_max_error_deg": 6.79655055503522e-06
+    },
+    {
+      "episode": 9,
+      "max_abs_error_deg": 0.06848504632201889,
+      "mean_abs_error_deg": 0.00922621088227259,
+      "p99_abs_error_deg": 0.0377003151669022,
+      "max_error_joint": 6,
+      "max_error_source_time": 0.06666666666666667,
+      "max_base_fit_error_all_nodes_deg": 0.04843356063672741,
+      "max_dense_vs_linear_reference_deg": 0.06848504632201889,
+      "max_local_envelope_excess_deg": 0.06724047728422983,
+      "max_global_range_excess_deg": 0.015898020874018804,
+      "protected_nodes": 93,
+      "unprotected_nodes": 338,
+      "joints": [
+        {
+          "joint": 1,
+          "max_abs_error_deg": 0.042550156092531606,
+          "mean_abs_error_deg": 0.012560406964906748,
+          "p99_abs_error_deg": 0.03936552499998082,
+          "max_local_envelope_excess_deg": 0.04192505446813228,
+          "max_global_range_excess_deg": 0.007184480530093396
+        },
+        {
+          "joint": 2,
+          "max_abs_error_deg": 0.03981860252355674,
+          "mean_abs_error_deg": 0.007324223784839901,
+          "p99_abs_error_deg": 0.036651876385377744,
+          "max_local_envelope_excess_deg": 0.030529983145494263,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 3,
+          "max_abs_error_deg": 0.03149919751592824,
+          "mean_abs_error_deg": 0.005242582500784281,
+          "p99_abs_error_deg": 0.026674739118019573,
+          "max_local_envelope_excess_deg": 0.03149919751592824,
+          "max_global_range_excess_deg": 0.015898020874018804
+        },
+        {
+          "joint": 4,
+          "max_abs_error_deg": 0.0632213795944387,
+          "mean_abs_error_deg": 0.008999702264848272,
+          "p99_abs_error_deg": 0.03430225328755894,
+          "max_local_envelope_excess_deg": 0.0632213795944387,
+          "max_global_range_excess_deg": 0.0034763192688920435
+        },
+        {
+          "joint": 5,
+          "max_abs_error_deg": 0.04775948705654086,
+          "mean_abs_error_deg": 0.009838295838459002,
+          "p99_abs_error_deg": 0.03558869437531823,
+          "max_local_envelope_excess_deg": 0.04775948705654086,
+          "max_global_range_excess_deg": 0.0036607431453607
+        },
+        {
+          "joint": 6,
+          "max_abs_error_deg": 0.06848504632201889,
+          "mean_abs_error_deg": 0.011392053939797335,
+          "p99_abs_error_deg": 0.040945406849363604,
+          "max_local_envelope_excess_deg": 0.06724047728422983,
+          "max_global_range_excess_deg": 0.0
+        }
+      ],
+      "reconstruction_max_error_deg": 6.785529449619637e-06
+    },
+    {
+      "episode": 10,
+      "max_abs_error_deg": 0.09158646074497565,
+      "mean_abs_error_deg": 0.009049255709530492,
+      "p99_abs_error_deg": 0.03562916674088916,
+      "max_error_joint": 6,
+      "max_error_source_time": 0.1,
+      "max_base_fit_error_all_nodes_deg": 0.05654562457774134,
+      "max_dense_vs_linear_reference_deg": 0.09158646074497565,
+      "max_local_envelope_excess_deg": 0.07370751184945137,
+      "max_global_range_excess_deg": 0.014863264556469106,
+      "protected_nodes": 115,
+      "unprotected_nodes": 321,
+      "joints": [
+        {
+          "joint": 1,
+          "max_abs_error_deg": 0.053455236156446574,
+          "mean_abs_error_deg": 0.012219942093803797,
+          "p99_abs_error_deg": 0.04005144500434214,
+          "max_local_envelope_excess_deg": 0.053455236156446574,
+          "max_global_range_excess_deg": 0.012429671528230326
+        },
+        {
+          "joint": 2,
+          "max_abs_error_deg": 0.03326953804162695,
+          "mean_abs_error_deg": 0.0071860229718883045,
+          "p99_abs_error_deg": 0.028113102309830953,
+          "max_local_envelope_excess_deg": 0.02981192139251295,
+          "max_global_range_excess_deg": 0.0020856863858227073
+        },
+        {
+          "joint": 3,
+          "max_abs_error_deg": 0.04073012720600059,
+          "mean_abs_error_deg": 0.00776412267559301,
+          "p99_abs_error_deg": 0.030789181758332354,
+          "max_local_envelope_excess_deg": 0.037910185513755384,
+          "max_global_range_excess_deg": 0.007772667615316379
+        },
+        {
+          "joint": 4,
+          "max_abs_error_deg": 0.03596271572348005,
+          "mean_abs_error_deg": 0.00884954857154593,
+          "p99_abs_error_deg": 0.03392491310298574,
+          "max_local_envelope_excess_deg": 0.03274052741075368,
+          "max_global_range_excess_deg": 0.00595751579354361
+        },
+        {
+          "joint": 5,
+          "max_abs_error_deg": 0.0310939726393275,
+          "mean_abs_error_deg": 0.008565158239434217,
+          "p99_abs_error_deg": 0.027758042682772217,
+          "max_local_envelope_excess_deg": 0.02974592652597973,
+          "max_global_range_excess_deg": 0.014863264556469106
+        },
+        {
+          "joint": 6,
+          "max_abs_error_deg": 0.09158646074497565,
+          "mean_abs_error_deg": 0.009710739704917693,
+          "p99_abs_error_deg": 0.05598053605354571,
+          "max_local_envelope_excess_deg": 0.07370751184945137,
+          "max_global_range_excess_deg": 0.005415386189170023
+        }
+      ],
+      "reconstruction_max_error_deg": 6.829565552295247e-06
+    },
+    {
+      "episode": 11,
+      "max_abs_error_deg": 0.06361116742737527,
+      "mean_abs_error_deg": 0.009138226027178861,
+      "p99_abs_error_deg": 0.0427527850643339,
+      "max_error_joint": 1,
+      "max_error_source_time": 10.5,
+      "max_base_fit_error_all_nodes_deg": 0.06825289297454741,
+      "max_dense_vs_linear_reference_deg": 0.06361116742737527,
+      "max_local_envelope_excess_deg": 0.06361116742737527,
+      "max_global_range_excess_deg": 0.006353091727304915,
+      "protected_nodes": 99,
+      "unprotected_nodes": 267,
+      "joints": [
+        {
+          "joint": 1,
+          "max_abs_error_deg": 0.06361116742737527,
+          "mean_abs_error_deg": 0.01449116471441501,
+          "p99_abs_error_deg": 0.05025205501109021,
+          "max_local_envelope_excess_deg": 0.06361116742737527,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 2,
+          "max_abs_error_deg": 0.05378752166444862,
+          "mean_abs_error_deg": 0.007730778061942561,
+          "p99_abs_error_deg": 0.042884081827016036,
+          "max_local_envelope_excess_deg": 0.053787521664454975,
+          "max_global_range_excess_deg": 0.0035323033342244095
+        },
+        {
+          "joint": 3,
+          "max_abs_error_deg": 0.03893843392424233,
+          "mean_abs_error_deg": 0.005573596995522718,
+          "p99_abs_error_deg": 0.03194638397154662,
+          "max_local_envelope_excess_deg": 0.03693777850178472,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 4,
+          "max_abs_error_deg": 0.04439257059546095,
+          "mean_abs_error_deg": 0.007523016880480929,
+          "p99_abs_error_deg": 0.03602081829653265,
+          "max_local_envelope_excess_deg": 0.04439257059544346,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 5,
+          "max_abs_error_deg": 0.053496534415547525,
+          "mean_abs_error_deg": 0.010534123653570551,
+          "p99_abs_error_deg": 0.04169198351725498,
+          "max_local_envelope_excess_deg": 0.053496534415547525,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 6,
+          "max_abs_error_deg": 0.043010609443544366,
+          "mean_abs_error_deg": 0.008976675857141393,
+          "p99_abs_error_deg": 0.035304075833076105,
+          "max_local_envelope_excess_deg": 0.036770055206211495,
+          "max_global_range_excess_deg": 0.006353091727304915
+        }
+      ],
+      "reconstruction_max_error_deg": 6.768873648085936e-06
+    },
+    {
+      "episode": 12,
+      "max_abs_error_deg": 0.09897912827670893,
+      "mean_abs_error_deg": 0.008228878559708759,
+      "p99_abs_error_deg": 0.04128966946396404,
+      "max_error_joint": 2,
+      "max_error_source_time": 0.1,
+      "max_base_fit_error_all_nodes_deg": 0.059235699418114546,
+      "max_dense_vs_linear_reference_deg": 0.09897912827670893,
+      "max_local_envelope_excess_deg": 0.06069944333834657,
+      "max_global_range_excess_deg": 0.006847870964849818,
+      "protected_nodes": 89,
+      "unprotected_nodes": 282,
+      "joints": [
+        {
+          "joint": 1,
+          "max_abs_error_deg": 0.06787481818603708,
+          "mean_abs_error_deg": 0.012107062849933976,
+          "p99_abs_error_deg": 0.05668802474594824,
+          "max_local_envelope_excess_deg": 0.0556012762526049,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 2,
+          "max_abs_error_deg": 0.09897912827670893,
+          "mean_abs_error_deg": 0.007304963794667314,
+          "p99_abs_error_deg": 0.06023775710577262,
+          "max_local_envelope_excess_deg": 0.06069944333834657,
+          "max_global_range_excess_deg": 0.005373211920807229
+        },
+        {
+          "joint": 3,
+          "max_abs_error_deg": 0.04115136024539279,
+          "mean_abs_error_deg": 0.0071386321325921836,
+          "p99_abs_error_deg": 0.028852790557402717,
+          "max_local_envelope_excess_deg": 0.04115136024539279,
+          "max_global_range_excess_deg": 0.004632266169369799
+        },
+        {
+          "joint": 4,
+          "max_abs_error_deg": 0.03274516845855322,
+          "mean_abs_error_deg": 0.007358327189285482,
+          "p99_abs_error_deg": 0.024405876518748624,
+          "max_local_envelope_excess_deg": 0.028140588857430534,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 5,
+          "max_abs_error_deg": 0.057786253113778094,
+          "mean_abs_error_deg": 0.008449165409929453,
+          "p99_abs_error_deg": 0.038333891784647654,
+          "max_local_envelope_excess_deg": 0.04014375148321963,
+          "max_global_range_excess_deg": 0.006847870964849818
+        },
+        {
+          "joint": 6,
+          "max_abs_error_deg": 0.03407152817162163,
+          "mean_abs_error_deg": 0.007015119981844152,
+          "p99_abs_error_deg": 0.028598257305395388,
+          "max_local_envelope_excess_deg": 0.03407152817162163,
+          "max_global_range_excess_deg": 0.0
+        }
+      ],
+      "reconstruction_max_error_deg": 6.819984754706056e-06
+    },
+    {
+      "episode": 13,
+      "max_abs_error_deg": 0.04507109558038617,
+      "mean_abs_error_deg": 0.00777314791096209,
+      "p99_abs_error_deg": 0.032061861258592235,
+      "max_error_joint": 5,
+      "max_error_source_time": 10.533333333333333,
+      "max_base_fit_error_all_nodes_deg": 0.04231334910505657,
+      "max_dense_vs_linear_reference_deg": 0.04507109558038617,
+      "max_local_envelope_excess_deg": 0.04507109558038617,
+      "max_global_range_excess_deg": 0.01556508859354312,
+      "protected_nodes": 94,
+      "unprotected_nodes": 546,
+      "joints": [
+        {
+          "joint": 1,
+          "max_abs_error_deg": 0.03367994512560484,
+          "mean_abs_error_deg": 0.0062764395991244636,
+          "p99_abs_error_deg": 0.024951605698858733,
+          "max_local_envelope_excess_deg": 0.03367994512560484,
+          "max_global_range_excess_deg": 0.0011307459702109036
+        },
+        {
+          "joint": 2,
+          "max_abs_error_deg": 0.040339844669577726,
+          "mean_abs_error_deg": 0.007535047092808654,
+          "p99_abs_error_deg": 0.031060379703615824,
+          "max_local_envelope_excess_deg": 0.040339844669577726,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 3,
+          "max_abs_error_deg": 0.04319234177081438,
+          "mean_abs_error_deg": 0.008118507141822337,
+          "p99_abs_error_deg": 0.0371883998369172,
+          "max_local_envelope_excess_deg": 0.04231334910505657,
+          "max_global_range_excess_deg": 0.01556508859354312
+        },
+        {
+          "joint": 4,
+          "max_abs_error_deg": 0.03361024171001496,
+          "mean_abs_error_deg": 0.007299846697189174,
+          "p99_abs_error_deg": 0.026406845160789092,
+          "max_local_envelope_excess_deg": 0.03361024171001496,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 5,
+          "max_abs_error_deg": 0.04507109558038617,
+          "mean_abs_error_deg": 0.008215761173359839,
+          "p99_abs_error_deg": 0.03173191324078218,
+          "max_local_envelope_excess_deg": 0.04507109558038617,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 6,
+          "max_abs_error_deg": 0.03482196634379029,
+          "mean_abs_error_deg": 0.009193285761468072,
+          "p99_abs_error_deg": 0.03156687913257967,
+          "max_local_envelope_excess_deg": 0.03208192876180812,
+          "max_global_range_excess_deg": 0.01322364587375965
+        }
+      ],
+      "reconstruction_max_error_deg": 6.767972686000209e-06
+    },
+    {
+      "episode": 14,
+      "max_abs_error_deg": 0.05851926582570217,
+      "mean_abs_error_deg": 0.008797932166255941,
+      "p99_abs_error_deg": 0.032915962399773534,
+      "max_error_joint": 2,
+      "max_error_source_time": 0.06666666666666667,
+      "max_base_fit_error_all_nodes_deg": 0.04419515913540335,
+      "max_dense_vs_linear_reference_deg": 0.05851926582570217,
+      "max_local_envelope_excess_deg": 0.04026427701137502,
+      "max_global_range_excess_deg": 0.007113443349743674,
+      "protected_nodes": 93,
+      "unprotected_nodes": 424,
+      "joints": [
+        {
+          "joint": 1,
+          "max_abs_error_deg": 0.04210595355809827,
+          "mean_abs_error_deg": 0.008976472014380366,
+          "p99_abs_error_deg": 0.029569432694234295,
+          "max_local_envelope_excess_deg": 0.03814755079617518,
+          "max_global_range_excess_deg": 0.002430397878017329
+        },
+        {
+          "joint": 2,
+          "max_abs_error_deg": 0.05851926582570217,
+          "mean_abs_error_deg": 0.00867502385119016,
+          "p99_abs_error_deg": 0.03299227899856834,
+          "max_local_envelope_excess_deg": 0.03915072826661927,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 3,
+          "max_abs_error_deg": 0.045955317034873815,
+          "mean_abs_error_deg": 0.0082933423895173,
+          "p99_abs_error_deg": 0.035842849286137124,
+          "max_local_envelope_excess_deg": 0.04026427701137502,
+          "max_global_range_excess_deg": 0.0047592939459358795
+        },
+        {
+          "joint": 4,
+          "max_abs_error_deg": 0.03319254724432108,
+          "mean_abs_error_deg": 0.006852909962966549,
+          "p99_abs_error_deg": 0.02624038205485327,
+          "max_local_envelope_excess_deg": 0.03319254724432108,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 5,
+          "max_abs_error_deg": 0.04024943610328426,
+          "mean_abs_error_deg": 0.0100427730614659,
+          "p99_abs_error_deg": 0.03319234358722049,
+          "max_local_envelope_excess_deg": 0.04024943610328426,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 6,
+          "max_abs_error_deg": 0.035003322714049,
+          "mean_abs_error_deg": 0.009947071718015373,
+          "p99_abs_error_deg": 0.029324075142620767,
+          "max_local_envelope_excess_deg": 0.035003322714049,
+          "max_global_range_excess_deg": 0.007113443349743674
+        }
+      ],
+      "reconstruction_max_error_deg": 6.55848898868242e-06
+    },
+    {
+      "episode": 15,
+      "max_abs_error_deg": 0.10242911684014347,
+      "mean_abs_error_deg": 0.008415168053632736,
+      "p99_abs_error_deg": 0.03523399543420757,
+      "max_error_joint": 6,
+      "max_error_source_time": 0.06666666666666667,
+      "max_base_fit_error_all_nodes_deg": 0.07120041001160927,
+      "max_dense_vs_linear_reference_deg": 0.10242911684014347,
+      "max_local_envelope_excess_deg": 0.09235627794451717,
+      "max_global_range_excess_deg": 0.009037143491318015,
+      "protected_nodes": 94,
+      "unprotected_nodes": 409,
+      "joints": [
+        {
+          "joint": 1,
+          "max_abs_error_deg": 0.03684606999980457,
+          "mean_abs_error_deg": 0.008491693636621892,
+          "p99_abs_error_deg": 0.031886993623373903,
+          "max_local_envelope_excess_deg": 0.036716049860132806,
+          "max_global_range_excess_deg": 0.0020870678916320713
+        },
+        {
+          "joint": 2,
+          "max_abs_error_deg": 0.061797759614746046,
+          "mean_abs_error_deg": 0.006489489781535578,
+          "p99_abs_error_deg": 0.03703533961611511,
+          "max_local_envelope_excess_deg": 0.04217046045285441,
+          "max_global_range_excess_deg": 0.0024141754260157554
+        },
+        {
+          "joint": 3,
+          "max_abs_error_deg": 0.04855719063622998,
+          "mean_abs_error_deg": 0.007933403428965102,
+          "p99_abs_error_deg": 0.03448478450432522,
+          "max_local_envelope_excess_deg": 0.042862330553003584,
+          "max_global_range_excess_deg": 0.009037143491318015
+        },
+        {
+          "joint": 4,
+          "max_abs_error_deg": 0.030020951267416298,
+          "mean_abs_error_deg": 0.0073764938992652695,
+          "p99_abs_error_deg": 0.023131829422694067,
+          "max_local_envelope_excess_deg": 0.030020951267413814,
+          "max_global_range_excess_deg": 0.004903994982889858
+        },
+        {
+          "joint": 5,
+          "max_abs_error_deg": 0.03727651361840176,
+          "mean_abs_error_deg": 0.009635977098919961,
+          "p99_abs_error_deg": 0.03580055717599059,
+          "max_local_envelope_excess_deg": 0.037276513618414484,
+          "max_global_range_excess_deg": 0.002029574670477131
+        },
+        {
+          "joint": 6,
+          "max_abs_error_deg": 0.10242911684014347,
+          "mean_abs_error_deg": 0.010563950476488606,
+          "p99_abs_error_deg": 0.05156631956852705,
+          "max_local_envelope_excess_deg": 0.09235627794451717,
+          "max_global_range_excess_deg": 0.0039525502056779885
+        }
+      ],
+      "reconstruction_max_error_deg": 6.66466402072522e-06
+    },
+    {
+      "episode": 16,
+      "max_abs_error_deg": 0.08059301586455472,
+      "mean_abs_error_deg": 0.008293406918531905,
+      "p99_abs_error_deg": 0.03593787032105386,
+      "max_error_joint": 3,
+      "max_error_source_time": 0.1,
+      "max_base_fit_error_all_nodes_deg": 0.05728139174526445,
+      "max_dense_vs_linear_reference_deg": 0.08059301586455472,
+      "max_local_envelope_excess_deg": 0.06758975210262734,
+      "max_global_range_excess_deg": 0.006702166475167598,
+      "protected_nodes": 91,
+      "unprotected_nodes": 431,
+      "joints": [
+        {
+          "joint": 1,
+          "max_abs_error_deg": 0.04440217040052518,
+          "mean_abs_error_deg": 0.008475869074440907,
+          "p99_abs_error_deg": 0.03349905085349092,
+          "max_local_envelope_excess_deg": 0.04440217040051882,
+          "max_global_range_excess_deg": 0.0008399621499243769
+        },
+        {
+          "joint": 2,
+          "max_abs_error_deg": 0.0518715285795472,
+          "mean_abs_error_deg": 0.008257107860399642,
+          "p99_abs_error_deg": 0.03887900613122826,
+          "max_local_envelope_excess_deg": 0.03681677328970823,
+          "max_global_range_excess_deg": 0.0006331006992457658
+        },
+        {
+          "joint": 3,
+          "max_abs_error_deg": 0.08059301586455472,
+          "mean_abs_error_deg": 0.008541587085511301,
+          "p99_abs_error_deg": 0.05097863560644194,
+          "max_local_envelope_excess_deg": 0.06758975210262734,
+          "max_global_range_excess_deg": 0.0011842305270356314
+        },
+        {
+          "joint": 4,
+          "max_abs_error_deg": 0.038796468785235017,
+          "mean_abs_error_deg": 0.008323367051696678,
+          "p99_abs_error_deg": 0.03374073335669427,
+          "max_local_envelope_excess_deg": 0.038796468785235017,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 5,
+          "max_abs_error_deg": 0.048519061192847525,
+          "mean_abs_error_deg": 0.006702817830414384,
+          "p99_abs_error_deg": 0.028445740491375535,
+          "max_local_envelope_excess_deg": 0.04425466418083165,
+          "max_global_range_excess_deg": 0.006702166475167598
+        },
+        {
+          "joint": 6,
+          "max_abs_error_deg": 0.03483442946814524,
+          "mean_abs_error_deg": 0.009459692608728514,
+          "p99_abs_error_deg": 0.031161253458169415,
+          "max_local_envelope_excess_deg": 0.03483442946814524,
+          "max_global_range_excess_deg": 0.0056884501758963195
+        }
+      ],
+      "reconstruction_max_error_deg": 6.71991066265324e-06
+    },
+    {
+      "episode": 17,
+      "max_abs_error_deg": 0.07511927455576116,
+      "mean_abs_error_deg": 0.008989449836400392,
+      "p99_abs_error_deg": 0.03433779014206089,
+      "max_error_joint": 6,
+      "max_error_source_time": 0.1,
+      "max_base_fit_error_all_nodes_deg": 0.05240892579182565,
+      "max_dense_vs_linear_reference_deg": 0.07511927455576752,
+      "max_local_envelope_excess_deg": 0.07511927455576752,
+      "max_global_range_excess_deg": 0.00864758973523598,
+      "protected_nodes": 91,
+      "unprotected_nodes": 376,
+      "joints": [
+        {
+          "joint": 1,
+          "max_abs_error_deg": 0.03711625714249594,
+          "mean_abs_error_deg": 0.0094440057963326,
+          "p99_abs_error_deg": 0.03088117485559955,
+          "max_local_envelope_excess_deg": 0.03711625714250866,
+          "max_global_range_excess_deg": 0.00418149108811873
+        },
+        {
+          "joint": 2,
+          "max_abs_error_deg": 0.04891077545535594,
+          "mean_abs_error_deg": 0.007429541997297813,
+          "p99_abs_error_deg": 0.035093884070553985,
+          "max_local_envelope_excess_deg": 0.048650404236358975,
+          "max_global_range_excess_deg": 0.002986863207900219
+        },
+        {
+          "joint": 3,
+          "max_abs_error_deg": 0.04197403476775405,
+          "mean_abs_error_deg": 0.007625065807150195,
+          "p99_abs_error_deg": 0.03164348089657265,
+          "max_local_envelope_excess_deg": 0.041974034767766774,
+          "max_global_range_excess_deg": 0.00538235631485275
+        },
+        {
+          "joint": 4,
+          "max_abs_error_deg": 0.07187298777179332,
+          "mean_abs_error_deg": 0.009905231496494384,
+          "p99_abs_error_deg": 0.04856646483456527,
+          "max_local_envelope_excess_deg": 0.07001130151652216,
+          "max_global_range_excess_deg": 0.002057210260461438
+        },
+        {
+          "joint": 5,
+          "max_abs_error_deg": 0.03228799888698337,
+          "mean_abs_error_deg": 0.008978637136556795,
+          "p99_abs_error_deg": 0.028243643409416014,
+          "max_local_envelope_excess_deg": 0.03228799888698337,
+          "max_global_range_excess_deg": 0.00864758973523598
+        },
+        {
+          "joint": 6,
+          "max_abs_error_deg": 0.07511927455576116,
+          "mean_abs_error_deg": 0.01055421678457056,
+          "p99_abs_error_deg": 0.05659762554149122,
+          "max_local_envelope_excess_deg": 0.07511927455576752,
+          "max_global_range_excess_deg": 0.0055684412900477865
+        }
+      ],
+      "reconstruction_max_error_deg": 6.757540619311633e-06
+    },
+    {
+      "episode": 18,
+      "max_abs_error_deg": 0.08297740836059267,
+      "mean_abs_error_deg": 0.007976641865559292,
+      "p99_abs_error_deg": 0.0378966061956739,
+      "max_error_joint": 6,
+      "max_error_source_time": 0.13333333333333333,
+      "max_base_fit_error_all_nodes_deg": 0.05917298548748749,
+      "max_dense_vs_linear_reference_deg": 0.08297740836059267,
+      "max_local_envelope_excess_deg": 0.06571296563292069,
+      "max_global_range_excess_deg": 0.009115306144706908,
+      "protected_nodes": 96,
+      "unprotected_nodes": 403,
+      "joints": [
+        {
+          "joint": 1,
+          "max_abs_error_deg": 0.03864914205222217,
+          "mean_abs_error_deg": 0.009242954432522972,
+          "p99_abs_error_deg": 0.034025826365919644,
+          "max_local_envelope_excess_deg": 0.038649142052215806,
+          "max_global_range_excess_deg": 0.0006856805527110165
+        },
+        {
+          "joint": 2,
+          "max_abs_error_deg": 0.04477509358268619,
+          "mean_abs_error_deg": 0.006509334455792735,
+          "p99_abs_error_deg": 0.03643930556825571,
+          "max_local_envelope_excess_deg": 0.02855367592215721,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 3,
+          "max_abs_error_deg": 0.052264350781955966,
+          "mean_abs_error_deg": 0.00697289462993406,
+          "p99_abs_error_deg": 0.040718386593940205,
+          "max_local_envelope_excess_deg": 0.04580911216435,
+          "max_global_range_excess_deg": 0.006859191962857983
+        },
+        {
+          "joint": 4,
+          "max_abs_error_deg": 0.05883200057257035,
+          "mean_abs_error_deg": 0.007084623586418658,
+          "p99_abs_error_deg": 0.02455564994118611,
+          "max_local_envelope_excess_deg": 0.05304164503764656,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 5,
+          "max_abs_error_deg": 0.04475663217225119,
+          "mean_abs_error_deg": 0.008424226767244981,
+          "p99_abs_error_deg": 0.03824492867646114,
+          "max_local_envelope_excess_deg": 0.042624343881264674,
+          "max_global_range_excess_deg": 0.003852124829292908
+        },
+        {
+          "joint": 6,
+          "max_abs_error_deg": 0.08297740836059267,
+          "mean_abs_error_deg": 0.00962581732144235,
+          "p99_abs_error_deg": 0.0479933913165736,
+          "max_local_envelope_excess_deg": 0.06571296563292069,
+          "max_global_range_excess_deg": 0.009115306144706908
+        }
+      ],
+      "reconstruction_max_error_deg": 6.760672855006376e-06
+    },
+    {
+      "episode": 19,
+      "max_abs_error_deg": 0.05145879119839433,
+      "mean_abs_error_deg": 0.008801410829305608,
+      "p99_abs_error_deg": 0.03464850993818054,
+      "max_error_joint": 3,
+      "max_error_source_time": 0.06666666666666667,
+      "max_base_fit_error_all_nodes_deg": 0.051804567521860224,
+      "max_dense_vs_linear_reference_deg": 0.05145879119839433,
+      "max_local_envelope_excess_deg": 0.04912518724229229,
+      "max_global_range_excess_deg": 0.0161290032158692,
+      "protected_nodes": 96,
+      "unprotected_nodes": 419,
+      "joints": [
+        {
+          "joint": 1,
+          "max_abs_error_deg": 0.0360646241587364,
+          "mean_abs_error_deg": 0.00773706232260609,
+          "p99_abs_error_deg": 0.030420511368836625,
+          "max_local_envelope_excess_deg": 0.0360646241587364,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 2,
+          "max_abs_error_deg": 0.04073066858623792,
+          "mean_abs_error_deg": 0.007886306143756336,
+          "p99_abs_error_deg": 0.03181419614343862,
+          "max_local_envelope_excess_deg": 0.04073066858620452,
+          "max_global_range_excess_deg": 0.003775561722609478
+        },
+        {
+          "joint": 3,
+          "max_abs_error_deg": 0.05145879119839433,
+          "mean_abs_error_deg": 0.009643627335359865,
+          "p99_abs_error_deg": 0.03935248875897328,
+          "max_local_envelope_excess_deg": 0.03949178868702473,
+          "max_global_range_excess_deg": 0.0013569751284408637
+        },
+        {
+          "joint": 4,
+          "max_abs_error_deg": 0.03500249683379097,
+          "mean_abs_error_deg": 0.008015814147164806,
+          "p99_abs_error_deg": 0.024570964755590285,
+          "max_local_envelope_excess_deg": 0.03358607018791998,
+          "max_global_range_excess_deg": 0.0003551781857426325
+        },
+        {
+          "joint": 5,
+          "max_abs_error_deg": 0.03481871545860363,
+          "mean_abs_error_deg": 0.00820273760665799,
+          "p99_abs_error_deg": 0.031036669446793844,
+          "max_local_envelope_excess_deg": 0.033449790293544224,
+          "max_global_range_excess_deg": 0.004184441707493802
+        },
+        {
+          "joint": 6,
+          "max_abs_error_deg": 0.04912518724228593,
+          "mean_abs_error_deg": 0.011322917420288556,
+          "p99_abs_error_deg": 0.04126474162562805,
+          "max_local_envelope_excess_deg": 0.04912518724229229,
+          "max_global_range_excess_deg": 0.0161290032158692
+        }
+      ],
+      "reconstruction_max_error_deg": 6.7669349855076155e-06
+    },
+    {
+      "episode": 20,
+      "max_abs_error_deg": 0.07532165688674437,
+      "mean_abs_error_deg": 0.00865190843045374,
+      "p99_abs_error_deg": 0.033759002947987185,
+      "max_error_joint": 3,
+      "max_error_source_time": 0.06666666666666667,
+      "max_base_fit_error_all_nodes_deg": 0.06477325612389989,
+      "max_dense_vs_linear_reference_deg": 0.07532165688674437,
+      "max_local_envelope_excess_deg": 0.06302059343266722,
+      "max_global_range_excess_deg": 0.01614473514826502,
+      "protected_nodes": 91,
+      "unprotected_nodes": 401,
+      "joints": [
+        {
+          "joint": 1,
+          "max_abs_error_deg": 0.0327814237290657,
+          "mean_abs_error_deg": 0.009128289022224106,
+          "p99_abs_error_deg": 0.030506724810043163,
+          "max_local_envelope_excess_deg": 0.0327814237290657,
+          "max_global_range_excess_deg": 0.0009312284956836599
+        },
+        {
+          "joint": 2,
+          "max_abs_error_deg": 0.032849630909760064,
+          "mean_abs_error_deg": 0.007151163673466972,
+          "p99_abs_error_deg": 0.02931074511196311,
+          "max_local_envelope_excess_deg": 0.030568620715190342,
+          "max_global_range_excess_deg": 0.005197250076082429
+        },
+        {
+          "joint": 3,
+          "max_abs_error_deg": 0.07532165688674437,
+          "mean_abs_error_deg": 0.009219238116374345,
+          "p99_abs_error_deg": 0.06611065003724514,
+          "max_local_envelope_excess_deg": 0.06302059343266722,
+          "max_global_range_excess_deg": 0.008699769731809344
+        },
+        {
+          "joint": 4,
+          "max_abs_error_deg": 0.036326209776079026,
+          "mean_abs_error_deg": 0.008017762403099092,
+          "p99_abs_error_deg": 0.031997146373609175,
+          "max_local_envelope_excess_deg": 0.036326209776073856,
+          "max_global_range_excess_deg": 0.01614473514826502
+        },
+        {
+          "joint": 5,
+          "max_abs_error_deg": 0.049372985627822566,
+          "mean_abs_error_deg": 0.009043304367567555,
+          "p99_abs_error_deg": 0.036957892583831115,
+          "max_local_envelope_excess_deg": 0.041159401624415386,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 6,
+          "max_abs_error_deg": 0.03881214343762929,
+          "mean_abs_error_deg": 0.009351692999990373,
+          "p99_abs_error_deg": 0.033764047692655175,
+          "max_local_envelope_excess_deg": 0.03764041442134613,
+          "max_global_range_excess_deg": 0.006566574111355686
+        }
+      ],
+      "reconstruction_max_error_deg": 6.748758777058425e-06
+    },
+    {
+      "episode": 21,
+      "max_abs_error_deg": 0.10228736947368101,
+      "mean_abs_error_deg": 0.008465941093185157,
+      "p99_abs_error_deg": 0.03390828954860321,
+      "max_error_joint": 4,
+      "max_error_source_time": 0.06666666666666667,
+      "max_base_fit_error_all_nodes_deg": 0.059200891748191466,
+      "max_dense_vs_linear_reference_deg": 0.10228736947368101,
+      "max_local_envelope_excess_deg": 0.09266959385157587,
+      "max_global_range_excess_deg": 0.009106604751966075,
+      "protected_nodes": 97,
+      "unprotected_nodes": 340,
+      "joints": [
+        {
+          "joint": 1,
+          "max_abs_error_deg": 0.04052905985529384,
+          "mean_abs_error_deg": 0.009119785107085554,
+          "p99_abs_error_deg": 0.03481847539232699,
+          "max_local_envelope_excess_deg": 0.04052905985529384,
+          "max_global_range_excess_deg": 0.0032822900443870537
+        },
+        {
+          "joint": 2,
+          "max_abs_error_deg": 0.033442831155810496,
+          "mean_abs_error_deg": 0.008513208659530674,
+          "p99_abs_error_deg": 0.030992934672014943,
+          "max_local_envelope_excess_deg": 0.033442831155810496,
+          "max_global_range_excess_deg": 0.003355816326113075
+        },
+        {
+          "joint": 3,
+          "max_abs_error_deg": 0.05128661339365194,
+          "mean_abs_error_deg": 0.008795036401905194,
+          "p99_abs_error_deg": 0.04348504948862462,
+          "max_local_envelope_excess_deg": 0.05128661339363922,
+          "max_global_range_excess_deg": 0.008788894983549607
+        },
+        {
+          "joint": 4,
+          "max_abs_error_deg": 0.10228736947368101,
+          "mean_abs_error_deg": 0.008586794781343355,
+          "p99_abs_error_deg": 0.0569941668256026,
+          "max_local_envelope_excess_deg": 0.09266959385157587,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 5,
+          "max_abs_error_deg": 0.033844203521245675,
+          "mean_abs_error_deg": 0.008111144799656089,
+          "p99_abs_error_deg": 0.03148112538784091,
+          "max_local_envelope_excess_deg": 0.03139681394776751,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 6,
+          "max_abs_error_deg": 0.0401510067360743,
+          "mean_abs_error_deg": 0.007669676809590081,
+          "p99_abs_error_deg": 0.03098551946719535,
+          "max_local_envelope_excess_deg": 0.03318046732801395,
+          "max_global_range_excess_deg": 0.009106604751966075
+        }
+      ],
+      "reconstruction_max_error_deg": 6.752274002425692e-06
+    },
+    {
+      "episode": 22,
+      "max_abs_error_deg": 0.07342889020740982,
+      "mean_abs_error_deg": 0.009003266338776282,
+      "p99_abs_error_deg": 0.03679674389844988,
+      "max_error_joint": 2,
+      "max_error_source_time": 0.06666666666666667,
+      "max_base_fit_error_all_nodes_deg": 0.07631660855050701,
+      "max_dense_vs_linear_reference_deg": 0.07342889020740982,
+      "max_local_envelope_excess_deg": 0.06400307147899484,
+      "max_global_range_excess_deg": 0.016374044441499633,
+      "protected_nodes": 93,
+      "unprotected_nodes": 407,
+      "joints": [
+        {
+          "joint": 1,
+          "max_abs_error_deg": 0.03298400813207104,
+          "mean_abs_error_deg": 0.008307897905861584,
+          "p99_abs_error_deg": 0.02942375097570509,
+          "max_local_envelope_excess_deg": 0.02968669779060964,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 2,
+          "max_abs_error_deg": 0.07342889020740982,
+          "mean_abs_error_deg": 0.009126499676533392,
+          "p99_abs_error_deg": 0.05565257090882777,
+          "max_local_envelope_excess_deg": 0.06400307147899484,
+          "max_global_range_excess_deg": 0.010227474592217258
+        },
+        {
+          "joint": 3,
+          "max_abs_error_deg": 0.07238649710265935,
+          "mean_abs_error_deg": 0.00828858065803938,
+          "p99_abs_error_deg": 0.059941706781077776,
+          "max_local_envelope_excess_deg": 0.06126000766856298,
+          "max_global_range_excess_deg": 0.0045162710046773615
+        },
+        {
+          "joint": 4,
+          "max_abs_error_deg": 0.04606605658796883,
+          "mean_abs_error_deg": 0.009241997432344476,
+          "p99_abs_error_deg": 0.03647096133893957,
+          "max_local_envelope_excess_deg": 0.04347053757899131,
+          "max_global_range_excess_deg": 0.002442813799767406
+        },
+        {
+          "joint": 5,
+          "max_abs_error_deg": 0.03450879130657165,
+          "mean_abs_error_deg": 0.008136479193718765,
+          "p99_abs_error_deg": 0.03176288668407685,
+          "max_local_envelope_excess_deg": 0.03435856729060678,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 6,
+          "max_abs_error_deg": 0.045400544079590446,
+          "mean_abs_error_deg": 0.010918143166160096,
+          "p99_abs_error_deg": 0.035852953012655765,
+          "max_local_envelope_excess_deg": 0.0372453951320833,
+          "max_global_range_excess_deg": 0.016374044441499633
+        }
+      ],
+      "reconstruction_max_error_deg": 6.7538031876721014e-06
+    },
+    {
+      "episode": 23,
+      "max_abs_error_deg": 0.13075184877577856,
+      "mean_abs_error_deg": 0.009109771191029232,
+      "p99_abs_error_deg": 0.03298174947649454,
+      "max_error_joint": 4,
+      "max_error_source_time": 0.06666666666666667,
+      "max_base_fit_error_all_nodes_deg": 0.0808665961388793,
+      "max_dense_vs_linear_reference_deg": 0.13075184877577856,
+      "max_local_envelope_excess_deg": 0.10523466419787153,
+      "max_global_range_excess_deg": 0.015238414336595148,
+      "protected_nodes": 95,
+      "unprotected_nodes": 451,
+      "joints": [
+        {
+          "joint": 1,
+          "max_abs_error_deg": 0.046956926530923516,
+          "mean_abs_error_deg": 0.008270392848847853,
+          "p99_abs_error_deg": 0.029752246053917342,
+          "max_local_envelope_excess_deg": 0.046956926530923516,
+          "max_global_range_excess_deg": 0.002510755104788086
+        },
+        {
+          "joint": 2,
+          "max_abs_error_deg": 0.048789111496906394,
+          "mean_abs_error_deg": 0.008893658835513683,
+          "p99_abs_error_deg": 0.04079445578870498,
+          "max_local_envelope_excess_deg": 0.039277351573312365,
+          "max_global_range_excess_deg": 0.003619053673479375
+        },
+        {
+          "joint": 3,
+          "max_abs_error_deg": 0.040922405262439954,
+          "mean_abs_error_deg": 0.008420842944073177,
+          "p99_abs_error_deg": 0.03342657269724236,
+          "max_local_envelope_excess_deg": 0.040922405262439954,
+          "max_global_range_excess_deg": 0.00489482992517337
+        },
+        {
+          "joint": 4,
+          "max_abs_error_deg": 0.13075184877577856,
+          "mean_abs_error_deg": 0.009941652907124603,
+          "p99_abs_error_deg": 0.06577672268233709,
+          "max_local_envelope_excess_deg": 0.10523466419787153,
+          "max_global_range_excess_deg": 0.0025873312136299423
+        },
+        {
+          "joint": 5,
+          "max_abs_error_deg": 0.03171944523886676,
+          "mean_abs_error_deg": 0.008566846385288636,
+          "p99_abs_error_deg": 0.027999504585915942,
+          "max_local_envelope_excess_deg": 0.03171944523886676,
+          "max_global_range_excess_deg": 1.1314857107686053e-05
+        },
+        {
+          "joint": 6,
+          "max_abs_error_deg": 0.0352699960410665,
+          "mean_abs_error_deg": 0.010565233225327436,
+          "p99_abs_error_deg": 0.032857493077455315,
+          "max_local_envelope_excess_deg": 0.03526999604106332,
+          "max_global_range_excess_deg": 0.015238414336595148
+        }
+      ],
+      "reconstruction_max_error_deg": 6.7644515320790165e-06
+    },
+    {
+      "episode": 24,
+      "max_abs_error_deg": 0.0657222930168768,
+      "mean_abs_error_deg": 0.008207409124149224,
+      "p99_abs_error_deg": 0.03332510334105903,
+      "max_error_joint": 2,
+      "max_error_source_time": 0.06666666666666667,
+      "max_base_fit_error_all_nodes_deg": 0.04985646452848424,
+      "max_dense_vs_linear_reference_deg": 0.0657222930168768,
+      "max_local_envelope_excess_deg": 0.048665885261078366,
+      "max_global_range_excess_deg": 0.02244462711965433,
+      "protected_nodes": 94,
+      "unprotected_nodes": 356,
+      "joints": [
+        {
+          "joint": 1,
+          "max_abs_error_deg": 0.04522897836458786,
+          "mean_abs_error_deg": 0.007756953806384022,
+          "p99_abs_error_deg": 0.028950633001563263,
+          "max_local_envelope_excess_deg": 0.04522897836458786,
+          "max_global_range_excess_deg": 0.00022154649840975534
+        },
+        {
+          "joint": 2,
+          "max_abs_error_deg": 0.0657222930168768,
+          "mean_abs_error_deg": 0.008869742637025047,
+          "p99_abs_error_deg": 0.05425866434138117,
+          "max_local_envelope_excess_deg": 0.048665885261078366,
+          "max_global_range_excess_deg": 0.006238838459367568
+        },
+        {
+          "joint": 3,
+          "max_abs_error_deg": 0.04134441678961176,
+          "mean_abs_error_deg": 0.008134570552697104,
+          "p99_abs_error_deg": 0.03786523257307342,
+          "max_local_envelope_excess_deg": 0.03786362374348472,
+          "max_global_range_excess_deg": 0.0007335387848919922
+        },
+        {
+          "joint": 4,
+          "max_abs_error_deg": 0.037502957174229565,
+          "mean_abs_error_deg": 0.007910860518858134,
+          "p99_abs_error_deg": 0.03205337918826526,
+          "max_local_envelope_excess_deg": 0.03224171152298947,
+          "max_global_range_excess_deg": 0.010174742713185188
+        },
+        {
+          "joint": 5,
+          "max_abs_error_deg": 0.03156263834395686,
+          "mean_abs_error_deg": 0.007860585785545411,
+          "p99_abs_error_deg": 0.03004582484893695,
+          "max_local_envelope_excess_deg": 0.030230299618420324,
+          "max_global_range_excess_deg": 0.0024369798675902194
+        },
+        {
+          "joint": 6,
+          "max_abs_error_deg": 0.049981764586552804,
+          "mean_abs_error_deg": 0.00871174144438562,
+          "p99_abs_error_deg": 0.041126805491349255,
+          "max_local_envelope_excess_deg": 0.03870962016605957,
+          "max_global_range_excess_deg": 0.02244462711965433
+        }
+      ],
+      "reconstruction_max_error_deg": 6.7171193315314754e-06
+    },
+    {
+      "episode": 25,
+      "max_abs_error_deg": 0.09276699655646471,
+      "mean_abs_error_deg": 0.00869887444745831,
+      "p99_abs_error_deg": 0.03784078069822143,
+      "max_error_joint": 6,
+      "max_error_source_time": 0.1,
+      "max_base_fit_error_all_nodes_deg": 0.06518972768874166,
+      "max_dense_vs_linear_reference_deg": 0.09276699655646471,
+      "max_local_envelope_excess_deg": 0.08399027894957739,
+      "max_global_range_excess_deg": 0.02555289304952007,
+      "protected_nodes": 95,
+      "unprotected_nodes": 406,
+      "joints": [
+        {
+          "joint": 1,
+          "max_abs_error_deg": 0.042921374094769656,
+          "mean_abs_error_deg": 0.008124809368660751,
+          "p99_abs_error_deg": 0.03363288316455378,
+          "max_local_envelope_excess_deg": 0.042921374094769656,
+          "max_global_range_excess_deg": 0.0013505398486318206
+        },
+        {
+          "joint": 2,
+          "max_abs_error_deg": 0.03966659451979119,
+          "mean_abs_error_deg": 0.008255971574902387,
+          "p99_abs_error_deg": 0.037358606761515666,
+          "max_local_envelope_excess_deg": 0.03836620829658664,
+          "max_global_range_excess_deg": 0.0034064314587218614
+        },
+        {
+          "joint": 3,
+          "max_abs_error_deg": 0.04832793027462212,
+          "mean_abs_error_deg": 0.008298845448103387,
+          "p99_abs_error_deg": 0.032710895551120105,
+          "max_local_envelope_excess_deg": 0.0483279302746094,
+          "max_global_range_excess_deg": 0.008892216112247948
+        },
+        {
+          "joint": 4,
+          "max_abs_error_deg": 0.05077904200503213,
+          "mean_abs_error_deg": 0.00872320849292774,
+          "p99_abs_error_deg": 0.03519960990516298,
+          "max_local_envelope_excess_deg": 0.05077904200503213,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 5,
+          "max_abs_error_deg": 0.04541291708979849,
+          "mean_abs_error_deg": 0.009780554452027187,
+          "p99_abs_error_deg": 0.03528572807052124,
+          "max_local_envelope_excess_deg": 0.04541291708979849,
+          "max_global_range_excess_deg": 0.02555289304952007
+        },
+        {
+          "joint": 6,
+          "max_abs_error_deg": 0.09276699655646471,
+          "mean_abs_error_deg": 0.009009857348128415,
+          "p99_abs_error_deg": 0.054559565444457184,
+          "max_local_envelope_excess_deg": 0.08399027894957739,
+          "max_global_range_excess_deg": 0.0015873819332303811
+        }
+      ],
+      "reconstruction_max_error_deg": 6.829831141333368e-06
+    },
+    {
+      "episode": 26,
+      "max_abs_error_deg": 0.05138494334001126,
+      "mean_abs_error_deg": 0.008750891799295337,
+      "p99_abs_error_deg": 0.03550387687229559,
+      "max_error_joint": 3,
+      "max_error_source_time": 0.13333333333333333,
+      "max_base_fit_error_all_nodes_deg": 0.04797627660123425,
+      "max_dense_vs_linear_reference_deg": 0.05138494334001126,
+      "max_local_envelope_excess_deg": 0.04797627660123425,
+      "max_global_range_excess_deg": 0.013308861397462048,
+      "protected_nodes": 91,
+      "unprotected_nodes": 361,
+      "joints": [
+        {
+          "joint": 1,
+          "max_abs_error_deg": 0.04260301256668552,
+          "mean_abs_error_deg": 0.009478226408521076,
+          "p99_abs_error_deg": 0.03278706589677429,
+          "max_local_envelope_excess_deg": 0.042603012566672795,
+          "max_global_range_excess_deg": 6.934031611241046e-05
+        },
+        {
+          "joint": 2,
+          "max_abs_error_deg": 0.04320983991368136,
+          "mean_abs_error_deg": 0.008740273709001968,
+          "p99_abs_error_deg": 0.03725920918408226,
+          "max_local_envelope_excess_deg": 0.04308199957852784,
+          "max_global_range_excess_deg": 0.009216978689515194
+        },
+        {
+          "joint": 3,
+          "max_abs_error_deg": 0.05138494334001126,
+          "mean_abs_error_deg": 0.009691461124419067,
+          "p99_abs_error_deg": 0.037683883173033304,
+          "max_local_envelope_excess_deg": 0.0423067091135654,
+          "max_global_range_excess_deg": 0.008583567819943393
+        },
+        {
+          "joint": 4,
+          "max_abs_error_deg": 0.03701013075232898,
+          "mean_abs_error_deg": 0.00801316489329357,
+          "p99_abs_error_deg": 0.028020509592984067,
+          "max_local_envelope_excess_deg": 0.03701013075232898,
+          "max_global_range_excess_deg": 0.008001391588018833
+        },
+        {
+          "joint": 5,
+          "max_abs_error_deg": 0.03465183281889075,
+          "mean_abs_error_deg": 0.008727088943692788,
+          "p99_abs_error_deg": 0.03229176987157916,
+          "max_local_envelope_excess_deg": 0.034083335977910696,
+          "max_global_range_excess_deg": 0.013308861397462048
+        },
+        {
+          "joint": 6,
+          "max_abs_error_deg": 0.04797627660123425,
+          "mean_abs_error_deg": 0.00785513571684355,
+          "p99_abs_error_deg": 0.03021723844012665,
+          "max_local_envelope_excess_deg": 0.04797627660123425,
+          "max_global_range_excess_deg": 0.0
+        }
+      ],
+      "reconstruction_max_error_deg": 6.794547263585772e-06
+    },
+    {
+      "episode": 27,
+      "max_abs_error_deg": 0.05102053842549509,
+      "mean_abs_error_deg": 0.008496472766597069,
+      "p99_abs_error_deg": 0.036633912332702814,
+      "max_error_joint": 6,
+      "max_error_source_time": 0.13333333333333333,
+      "max_base_fit_error_all_nodes_deg": 0.055210844723753184,
+      "max_dense_vs_linear_reference_deg": 0.05102053842549509,
+      "max_local_envelope_excess_deg": 0.04554209734872857,
+      "max_global_range_excess_deg": 0.013290666040547008,
+      "protected_nodes": 91,
+      "unprotected_nodes": 351,
+      "joints": [
+        {
+          "joint": 1,
+          "max_abs_error_deg": 0.0374510320845271,
+          "mean_abs_error_deg": 0.008298858146327371,
+          "p99_abs_error_deg": 0.03188918132986113,
+          "max_local_envelope_excess_deg": 0.03463997293322449,
+          "max_global_range_excess_deg": 0.0027487854252826395
+        },
+        {
+          "joint": 2,
+          "max_abs_error_deg": 0.04244018891064378,
+          "mean_abs_error_deg": 0.008407421319305096,
+          "p99_abs_error_deg": 0.033640998719155116,
+          "max_local_envelope_excess_deg": 0.037361332658916474,
+          "max_global_range_excess_deg": 0.004527649639536562
+        },
+        {
+          "joint": 3,
+          "max_abs_error_deg": 0.048718266366077095,
+          "mean_abs_error_deg": 0.009141836395801803,
+          "p99_abs_error_deg": 0.041278253103306364,
+          "max_local_envelope_excess_deg": 0.04441380878112971,
+          "max_global_range_excess_deg": 0.005556729001437435
+        },
+        {
+          "joint": 4,
+          "max_abs_error_deg": 0.03917458851144026,
+          "mean_abs_error_deg": 0.007701471377630231,
+          "p99_abs_error_deg": 0.031192520501042768,
+          "max_local_envelope_excess_deg": 0.03917458851144026,
+          "max_global_range_excess_deg": 6.256120443214512e-05
+        },
+        {
+          "joint": 5,
+          "max_abs_error_deg": 0.03939255197715889,
+          "mean_abs_error_deg": 0.008636016692753283,
+          "p99_abs_error_deg": 0.03254986272720119,
+          "max_local_envelope_excess_deg": 0.03276705659174715,
+          "max_global_range_excess_deg": 0.007807182696269092
+        },
+        {
+          "joint": 6,
+          "max_abs_error_deg": 0.05102053842549509,
+          "mean_abs_error_deg": 0.008793232667764644,
+          "p99_abs_error_deg": 0.041101538888683696,
+          "max_local_envelope_excess_deg": 0.04554209734872857,
+          "max_global_range_excess_deg": 0.013290666040547008
+        }
+      ],
+      "reconstruction_max_error_deg": 6.499975993429849e-06
+    },
+    {
+      "episode": 28,
+      "max_abs_error_deg": 0.08766851438570533,
+      "mean_abs_error_deg": 0.008406144632586357,
+      "p99_abs_error_deg": 0.033625146471450144,
+      "max_error_joint": 3,
+      "max_error_source_time": 0.1,
+      "max_base_fit_error_all_nodes_deg": 0.07019317402194566,
+      "max_dense_vs_linear_reference_deg": 0.08766851438569896,
+      "max_local_envelope_excess_deg": 0.08766851438569896,
+      "max_global_range_excess_deg": 0.012932764157284176,
+      "protected_nodes": 98,
+      "unprotected_nodes": 423,
+      "joints": [
+        {
+          "joint": 1,
+          "max_abs_error_deg": 0.041922081602771416,
+          "mean_abs_error_deg": 0.00903252661396066,
+          "p99_abs_error_deg": 0.03183050626725449,
+          "max_local_envelope_excess_deg": 0.0419220816027587,
+          "max_global_range_excess_deg": 0.002211519607843837
+        },
+        {
+          "joint": 2,
+          "max_abs_error_deg": 0.04486744466408753,
+          "mean_abs_error_deg": 0.007649718156649209,
+          "p99_abs_error_deg": 0.030647831232303618,
+          "max_local_envelope_excess_deg": 0.04119983536266768,
+          "max_global_range_excess_deg": 0.00044932814098537537
+        },
+        {
+          "joint": 3,
+          "max_abs_error_deg": 0.08766851438570533,
+          "mean_abs_error_deg": 0.008952556777465944,
+          "p99_abs_error_deg": 0.05457178819977765,
+          "max_local_envelope_excess_deg": 0.08766851438569896,
+          "max_global_range_excess_deg": 0.0020781653657377525
+        },
+        {
+          "joint": 4,
+          "max_abs_error_deg": 0.029625423807036224,
+          "mean_abs_error_deg": 0.00745173005406488,
+          "p99_abs_error_deg": 0.02687907716503887,
+          "max_local_envelope_excess_deg": 0.029625423807036224,
+          "max_global_range_excess_deg": 0.00488531209779604
+        },
+        {
+          "joint": 5,
+          "max_abs_error_deg": 0.0575346870267096,
+          "mean_abs_error_deg": 0.00884335350572577,
+          "p99_abs_error_deg": 0.03536914111409249,
+          "max_local_envelope_excess_deg": 0.0575346870267096,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 6,
+          "max_abs_error_deg": 0.052532156768830204,
+          "mean_abs_error_deg": 0.008506982687651684,
+          "p99_abs_error_deg": 0.035379857351019436,
+          "max_local_envelope_excess_deg": 0.042666325279489145,
+          "max_global_range_excess_deg": 0.012932764157284176
+        }
+      ],
+      "reconstruction_max_error_deg": 6.812106240871259e-06
+    },
+    {
+      "episode": 29,
+      "max_abs_error_deg": 0.08014800751072221,
+      "mean_abs_error_deg": 0.007015289641717872,
+      "p99_abs_error_deg": 0.032787721020216425,
+      "max_error_joint": 3,
+      "max_error_source_time": 0.06666666666666667,
+      "max_base_fit_error_all_nodes_deg": 0.061159190012785795,
+      "max_dense_vs_linear_reference_deg": 0.08014800751072221,
+      "max_local_envelope_excess_deg": 0.06401701198327626,
+      "max_global_range_excess_deg": 0.008811070045628205,
+      "protected_nodes": 93,
+      "unprotected_nodes": 484,
+      "joints": [
+        {
+          "joint": 1,
+          "max_abs_error_deg": 0.03359646311685215,
+          "mean_abs_error_deg": 0.0062747035420361846,
+          "p99_abs_error_deg": 0.025587236102143977,
+          "max_local_envelope_excess_deg": 0.03359646311685215,
+          "max_global_range_excess_deg": 0.002612311846310379
+        },
+        {
+          "joint": 2,
+          "max_abs_error_deg": 0.05733212383261295,
+          "mean_abs_error_deg": 0.00793746241493066,
+          "p99_abs_error_deg": 0.04088088464747094,
+          "max_local_envelope_excess_deg": 0.05115092916551022,
+          "max_global_range_excess_deg": 0.0055734137559261656
+        },
+        {
+          "joint": 3,
+          "max_abs_error_deg": 0.08014800751072221,
+          "mean_abs_error_deg": 0.00826081980761641,
+          "p99_abs_error_deg": 0.04746427259043346,
+          "max_local_envelope_excess_deg": 0.06401701198327626,
+          "max_global_range_excess_deg": 0.008811070045628205
+        },
+        {
+          "joint": 4,
+          "max_abs_error_deg": 0.04109599011595101,
+          "mean_abs_error_deg": 0.005786908616776622,
+          "p99_abs_error_deg": 0.027389487510131212,
+          "max_local_envelope_excess_deg": 0.04026959541877352,
+          "max_global_range_excess_deg": 0.0036060192058705947
+        },
+        {
+          "joint": 5,
+          "max_abs_error_deg": 0.03279223617877459,
+          "mean_abs_error_deg": 0.006384076152470645,
+          "p99_abs_error_deg": 0.02904388074836247,
+          "max_local_envelope_excess_deg": 0.03279223617877459,
+          "max_global_range_excess_deg": 0.0033359045669582306
+        },
+        {
+          "joint": 6,
+          "max_abs_error_deg": 0.04237758663714824,
+          "mean_abs_error_deg": 0.007447767316476703,
+          "p99_abs_error_deg": 0.029572744475809282,
+          "max_local_envelope_excess_deg": 0.030610900891699266,
+          "max_global_range_excess_deg": 0.004160706096111593
+        }
+      ],
+      "reconstruction_max_error_deg": 6.575062833683089e-06
+    },
+    {
+      "episode": 30,
+      "max_abs_error_deg": 0.04758488090546814,
+      "mean_abs_error_deg": 0.007670058034448305,
+      "p99_abs_error_deg": 0.03234475243788212,
+      "max_error_joint": 3,
+      "max_error_source_time": 0.2,
+      "max_base_fit_error_all_nodes_deg": 0.04079257381518114,
+      "max_dense_vs_linear_reference_deg": 0.04758488090546814,
+      "max_local_envelope_excess_deg": 0.04079257381518114,
+      "max_global_range_excess_deg": 0.018440495397269416,
+      "protected_nodes": 95,
+      "unprotected_nodes": 485,
+      "joints": [
+        {
+          "joint": 1,
+          "max_abs_error_deg": 0.04079257381518114,
+          "mean_abs_error_deg": 0.007795054424731795,
+          "p99_abs_error_deg": 0.031198653981101897,
+          "max_local_envelope_excess_deg": 0.04079257381518114,
+          "max_global_range_excess_deg": 0.002624873856947429
+        },
+        {
+          "joint": 2,
+          "max_abs_error_deg": 0.04710433851783631,
+          "mean_abs_error_deg": 0.007654857939068051,
+          "p99_abs_error_deg": 0.03365323708998091,
+          "max_local_envelope_excess_deg": 0.03214439698773193,
+          "max_global_range_excess_deg": 8.358768046853491e-06
+        },
+        {
+          "joint": 3,
+          "max_abs_error_deg": 0.04758488090546814,
+          "mean_abs_error_deg": 0.007342825331558544,
+          "p99_abs_error_deg": 0.03154282100187509,
+          "max_local_envelope_excess_deg": 0.030683438219281007,
+          "max_global_range_excess_deg": 0.009162413069647624
+        },
+        {
+          "joint": 4,
+          "max_abs_error_deg": 0.03908808810084485,
+          "mean_abs_error_deg": 0.00736959845129523,
+          "p99_abs_error_deg": 0.03367296771193346,
+          "max_local_envelope_excess_deg": 0.03908808810084485,
+          "max_global_range_excess_deg": 0.006981018136203886
+        },
+        {
+          "joint": 5,
+          "max_abs_error_deg": 0.033626309939580566,
+          "mean_abs_error_deg": 0.00687804154055189,
+          "p99_abs_error_deg": 0.025575735820710623,
+          "max_local_envelope_excess_deg": 0.029973313901936773,
+          "max_global_range_excess_deg": 0.018440495397269416
+        },
+        {
+          "joint": 6,
+          "max_abs_error_deg": 0.03705737556246839,
+          "mean_abs_error_deg": 0.008979970519484319,
+          "p99_abs_error_deg": 0.032427999133493535,
+          "max_local_envelope_excess_deg": 0.03705737556246839,
+          "max_global_range_excess_deg": 0.015377716315853213
+        }
+      ],
+      "reconstruction_max_error_deg": 6.808851820987873e-06
+    },
+    {
+      "episode": 31,
+      "max_abs_error_deg": 0.07322021203810151,
+      "mean_abs_error_deg": 0.008069607306538064,
+      "p99_abs_error_deg": 0.039424399588906874,
+      "max_error_joint": 3,
+      "max_error_source_time": 0.16666666666666666,
+      "max_base_fit_error_all_nodes_deg": 0.056346639801194726,
+      "max_dense_vs_linear_reference_deg": 0.07322021203810151,
+      "max_local_envelope_excess_deg": 0.07278929836605948,
+      "max_global_range_excess_deg": 0.019160843701221855,
+      "protected_nodes": 92,
+      "unprotected_nodes": 378,
+      "joints": [
+        {
+          "joint": 1,
+          "max_abs_error_deg": 0.050760631788294805,
+          "mean_abs_error_deg": 0.007601288065715145,
+          "p99_abs_error_deg": 0.03927088429653036,
+          "max_local_envelope_excess_deg": 0.050760631788294805,
+          "max_global_range_excess_deg": 0.0012552890513290596
+        },
+        {
+          "joint": 2,
+          "max_abs_error_deg": 0.05765925394074176,
+          "mean_abs_error_deg": 0.008397849711412202,
+          "p99_abs_error_deg": 0.040339233050509,
+          "max_local_envelope_excess_deg": 0.05765925394074176,
+          "max_global_range_excess_deg": 0.0016534041806464852
+        },
+        {
+          "joint": 3,
+          "max_abs_error_deg": 0.07322021203810151,
+          "mean_abs_error_deg": 0.008428200265631408,
+          "p99_abs_error_deg": 0.05880388704587374,
+          "max_local_envelope_excess_deg": 0.07278929836605948,
+          "max_global_range_excess_deg": 0.0017358237671385847
+        },
+        {
+          "joint": 4,
+          "max_abs_error_deg": 0.0393872379319791,
+          "mean_abs_error_deg": 0.0071034537022064866,
+          "p99_abs_error_deg": 0.03282907619342169,
+          "max_local_envelope_excess_deg": 0.03938723793197751,
+          "max_global_range_excess_deg": 0.010539792109698944
+        },
+        {
+          "joint": 5,
+          "max_abs_error_deg": 0.042608398150471606,
+          "mean_abs_error_deg": 0.00590113617414699,
+          "p99_abs_error_deg": 0.032042809509750886,
+          "max_local_envelope_excess_deg": 0.03779835680910121,
+          "max_global_range_excess_deg": 0.019160843701221855
+        },
+        {
+          "joint": 6,
+          "max_abs_error_deg": 0.05640477838147386,
+          "mean_abs_error_deg": 0.010985715920116147,
+          "p99_abs_error_deg": 0.04776467282761084,
+          "max_local_envelope_excess_deg": 0.050917030723493545,
+          "max_global_range_excess_deg": 0.0
+        }
+      ],
+      "reconstruction_max_error_deg": 3.413570183314206e-06
+    },
+    {
+      "episode": 32,
+      "max_abs_error_deg": 0.11281196695659934,
+      "mean_abs_error_deg": 0.008989061872280418,
+      "p99_abs_error_deg": 0.043344004066144366,
+      "max_error_joint": 3,
+      "max_error_source_time": 0.13333333333333333,
+      "max_base_fit_error_all_nodes_deg": 0.08179743017537809,
+      "max_dense_vs_linear_reference_deg": 0.11281196695659934,
+      "max_local_envelope_excess_deg": 0.10174763876001354,
+      "max_global_range_excess_deg": 0.0043710974828876075,
+      "protected_nodes": 93,
+      "unprotected_nodes": 437,
+      "joints": [
+        {
+          "joint": 1,
+          "max_abs_error_deg": 0.05107563873142532,
+          "mean_abs_error_deg": 0.007018955677472861,
+          "p99_abs_error_deg": 0.03556745387362294,
+          "max_local_envelope_excess_deg": 0.03964049044819172,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 2,
+          "max_abs_error_deg": 0.05334851728769446,
+          "mean_abs_error_deg": 0.008332468796029176,
+          "p99_abs_error_deg": 0.04213889414273581,
+          "max_local_envelope_excess_deg": 0.04642847323097285,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 3,
+          "max_abs_error_deg": 0.11281196695659934,
+          "mean_abs_error_deg": 0.009878016452419121,
+          "p99_abs_error_deg": 0.0865044191194171,
+          "max_local_envelope_excess_deg": 0.10174763876001354,
+          "max_global_range_excess_deg": 0.0043710974828876075
+        },
+        {
+          "joint": 4,
+          "max_abs_error_deg": 0.05996796786905714,
+          "mean_abs_error_deg": 0.008148744361644046,
+          "p99_abs_error_deg": 0.039408308275007534,
+          "max_local_envelope_excess_deg": 0.04775321682243582,
+          "max_global_range_excess_deg": 0.0017280372857036478
+        },
+        {
+          "joint": 5,
+          "max_abs_error_deg": 0.052965655306102394,
+          "mean_abs_error_deg": 0.007531893484416408,
+          "p99_abs_error_deg": 0.031830922484553055,
+          "max_local_envelope_excess_deg": 0.05296565530610875,
+          "max_global_range_excess_deg": 0.004251908771259526
+        },
+        {
+          "joint": 6,
+          "max_abs_error_deg": 0.08891376475300873,
+          "mean_abs_error_deg": 0.013024292461700887,
+          "p99_abs_error_deg": 0.06603788633491993,
+          "max_local_envelope_excess_deg": 0.07778370514629515,
+          "max_global_range_excess_deg": 0.002971776719103331
+        }
+      ],
+      "reconstruction_max_error_deg": 6.827350359570701e-06
+    },
+    {
+      "episode": 33,
+      "max_abs_error_deg": 0.1252460050437598,
+      "mean_abs_error_deg": 0.00968903458671247,
+      "p99_abs_error_deg": 0.046556631888072735,
+      "max_error_joint": 6,
+      "max_error_source_time": 0.13333333333333333,
+      "max_base_fit_error_all_nodes_deg": 0.1052366655788242,
+      "max_dense_vs_linear_reference_deg": 0.1252460050437598,
+      "max_local_envelope_excess_deg": 0.11602435826972333,
+      "max_global_range_excess_deg": 0.010680869938183022,
+      "protected_nodes": 93,
+      "unprotected_nodes": 380,
+      "joints": [
+        {
+          "joint": 1,
+          "max_abs_error_deg": 0.048265707409748976,
+          "mean_abs_error_deg": 0.009543007829331294,
+          "p99_abs_error_deg": 0.03785183256891775,
+          "max_local_envelope_excess_deg": 0.04826570740973625,
+          "max_global_range_excess_deg": 0.0028461462784491183
+        },
+        {
+          "joint": 2,
+          "max_abs_error_deg": 0.04897652488074974,
+          "mean_abs_error_deg": 0.009593212905432722,
+          "p99_abs_error_deg": 0.04121893178238166,
+          "max_local_envelope_excess_deg": 0.04610232067344983,
+          "max_global_range_excess_deg": 0.0018585930872974555
+        },
+        {
+          "joint": 3,
+          "max_abs_error_deg": 0.06231520248567803,
+          "mean_abs_error_deg": 0.010046929070585547,
+          "p99_abs_error_deg": 0.050639136851489214,
+          "max_local_envelope_excess_deg": 0.05754924173047546,
+          "max_global_range_excess_deg": 0.010680869938183022
+        },
+        {
+          "joint": 4,
+          "max_abs_error_deg": 0.07226795715377357,
+          "mean_abs_error_deg": 0.008630609325340313,
+          "p99_abs_error_deg": 0.06733144708959356,
+          "max_local_envelope_excess_deg": 0.07226795715377198,
+          "max_global_range_excess_deg": 0.0
+        },
+        {
+          "joint": 5,
+          "max_abs_error_deg": 0.031177227042676628,
+          "mean_abs_error_deg": 0.007317383823232491,
+          "p99_abs_error_deg": 0.027460421506113292,
+          "max_local_envelope_excess_deg": 0.029541295663526045,
+          "max_global_range_excess_deg": 0.0031287937977760825
+        },
+        {
+          "joint": 6,
+          "max_abs_error_deg": 0.1252460050437598,
+          "mean_abs_error_deg": 0.013003064566352456,
+          "p99_abs_error_deg": 0.10408749229475786,
+          "max_local_envelope_excess_deg": 0.11602435826972333,
+          "max_global_range_excess_deg": 0.0
+        }
+      ],
+      "reconstruction_max_error_deg": 6.7125390020124805e-06
+    }
+  ],
+  "definitions": {
+    "node_error": "Corrected fitted path minus recorded angle at the same original source time, excluding protected nodes",
+    "local_envelope": "Dense path outside the range of the two adjacent recorded samples; includes smoothing displacement, not proof of a new extremum",
+    "dense_reference": "Piecewise linear connection of samples; actual inter-sample physical motion is unknown",
+    "dense_resolution": "20 subdivisions per original 30 Hz interval; numerical scan, not an analytic bound"
+  }
+}

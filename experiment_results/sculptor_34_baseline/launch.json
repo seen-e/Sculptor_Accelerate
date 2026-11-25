@@ -1,0 +1,22 @@
+{
+  "pid": 693538,
+  "started": "2026-11-23T09:41:42.244397+00:00",
+  "source": "/mnt/data/leilv/openpi_sculptor/dataset/temp/sculptor_sku_a_b_20261116/datasets/lerobot_20261102_V19_20261102-gpu-hefei-poc_sft_6f5ca00c",
+  "command": [
+    "/root/miniconda3/envs/retime/bin/python",
+    "/root/acce_exp/code/retime_lerobot.py",
+    "--src",
+    "/mnt/data/leilv/openpi_sculptor/dataset/temp/sculptor_sku_a_b_20261116/datasets/lerobot_20261102_V19_20261102-gpu-hefei-poc_sft_6f5ca00c",
+    "--out-root",
+    "/root/acce_exp/runs/sculptor_34_baseline/output",
+    "--workers",
+    "4",
+    "--jobs",
+    "3",
+    "--encoder",
+    "x264",
+    "--verify",
+    "3"
+  ],
+  "code_sha256": "77790c327b83976cfc2592137784ed925faea2199e6647b9bf2947ebf0dcf63c"
+}

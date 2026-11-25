@@ -1,0 +1,22 @@
+
+加速转换
+cd /home/seene/data_test2
+/home/seene/miniconda3/envs/isaaclab/bin/python retime_lerobot.py --src openpi_sculptor_dataset/lerobot_* --out-root <输出目录>
+或者：$PY check_sync.py --dataset openpi_sculptor_dataset/lerobot_20260918_fixed640_guard_12eps \
+    openpi_sculptor_dataset_retime/lerobot_20260918_fixed640_guard_12eps_retime --plot sync_0918.png
+
+不加 --out-root 时，默认写到 /home/seene/data_test2/openpi_sculptor_dataset_retime/。
+
+1. 定量延迟检查：check_sync.py
+原理：把图片的运动量（相邻帧像素差）和关节的运动量（|Δq|）放到同一条原始时间轴上，做互相关，峰值的位置就是图片相对关节的延迟。正数表示图片比关节晚。
+PY=/home/seene/miniconda3/envs/isaaclab/bin/python
+$PY check_sync.py --dataset <原数据目录> <加速后目录> --plot sync.png
+
+2. Isaac Sim 回放：isaac_show_lerobot.py
+第 n 行的关节驱动机器人，旁边显示同一行（第 n 帧）的视频，正好是训练时用的那一对数据。加 --ref 可以同时放原数据。用 --sync source 时两边按原始时间对齐，两台机器人的姿态和画面都应该完全一致。
+
+
+# 交互窗口
+$PY isaac_show_lerobot.py --dataset <加速后目录> --ref <原数据目录> --ep 0 --sync source --start 30 --end 60
+# 不开窗口，直接录一个对比视频
+$PY isaac_show_lerobot.py --dataset <加速后目录> --ref <原数据目录> --ep 0 --start 30 --end 40 --headless --record out.mp4

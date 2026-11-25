@@ -1,0 +1,14 @@
+[
+  {
+    "variant": "commander",
+    "input_frames": 90,
+    "output_frames": 31,
+    "passed": true
+  },
+  {
+    "variant": "legacy",
+    "input_frames": 90,
+    "output_frames": 31,
+    "passed": true
+  }
+]
