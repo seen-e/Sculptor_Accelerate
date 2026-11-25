@@ -56,6 +56,7 @@ import pyarrow as pa
 import pyarrow.parquet as pq
 from scipy.interpolate import CubicSpline, make_smoothing_spline
 from scipy.ndimage import uniform_filter1d
+from retime_config import parse_config_args
 
 POS = slice(0, 6)
 VEL = slice(14, 20)
@@ -64,7 +65,7 @@ ACTION_BASE_VEL = slice(7, 10)
 SUCTION, PRESSURE = 6, 10
 QUANTILES = [0.01, 0.10, 0.50, 0.90, 0.99]
 
-ap = argparse.ArgumentParser()
+ap = argparse.ArgumentParser(allow_abbrev=False)
 ap.add_argument("--src", nargs="+", required=True, help="LeRobot dataset dir(s)")
 ap.add_argument("--out-root", default=None, help="default: <parent of src>_retime/")
 # --- retime_ep.py parameters (same defaults) ---
@@ -101,7 +102,7 @@ ap.add_argument("--jobs", type=int, default=6, help="parallel video re-encodes")
 ap.add_argument("--verify", type=int, default=2, help="episodes per dataset to pixel-check (0 = off)")
 ap.add_argument("--overwrite", action="store_true")
 ap.add_argument("--no-plot", action="store_true", help="skip the per-episode plots/epXXX_retime.png")
-args = ap.parse_args()
+args = parse_config_args(ap, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'config', 'config.yaml'))
 
 V = np.deg2rad(args.vmax_deg)
 A = np.deg2rad(args.amax_deg)

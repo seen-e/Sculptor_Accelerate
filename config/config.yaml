@@ -1,0 +1,47 @@
+# retime_lerobot.py 默认配置。优先级：命令行 > 本文件 > 代码默认值。
+# 参数名对应命令行参数，把连字符改成下划线；不要加 --。
+# 路径相对于运行命令时的工作目录；建议填写绝对路径。
+
+# 输入必须是数据集目录列表；null 表示运行时用 --src 指定。
+# src:
+#   - /mnt/data/my_dataset
+src: null
+out_root: null                   # null：沿用自动生成的输出位置
+
+# 机械臂限制：顺序为 J1、J2、J3、J4、J5、J6。
+frame_step: 3.0                  # 保护区间外最大加速倍率
+vmax_deg: [63, 36, 90, 108, 162, 162]   # °/s
+amax_deg: [120, 60, 90, 96, 192, 192]   # °/s²
+margin: 0.98                     # 限值余量系数
+
+# 吸盘动作保护与样条路径。
+guard_pre: 0.8                   # 事件前保护时间，s
+guard_post: 0.8                  # 事件后保护时间，s
+max_expand: 1.0                  # 保护区间最大扩展时间，s
+pick_pressure: -30.0             # 取物气压阈值
+smooth_lam: 0.0001               # 平滑强度；<= 0 使用穿过样本的三次插值
+blend: 0.5                      # 端点修正过渡时长参数，s
+subdiv: 4                       # 每个原始帧间隔的求解网格细分数
+
+# 可选限制，null 表示不开启。
+jmax_deg: null                  # 六个关节的 jerk 上限，°/s³，填写六元素列表
+base_axy: null                  # 底盘 XY 合加速度上限，m/s²
+base_aw: null                   # 底盘偏航角加速度上限，rad/s²
+base_smooth_lam: 0.0001
+
+# 悬停剪切：no_dwell_cut 为 false 表示启用剪切。
+no_dwell_cut: false
+dwell_lin: 0.01                 # 末端线速度阈值，m/s
+dwell_ang: 0.1                  # 末端角速度阈值，rad/s
+dwell_base_v: 0.02              # 底盘平移速度阈值，m/s
+dwell_base_w: 0.05              # 底盘角速度阈值，rad/s
+dwell_min: 0.3                 # 最短悬停时长，s
+
+# 并行、视频和输出。
+workers: 16
+encoder: nvenc                  # nvenc：NVIDIA 编码；x264：CPU 编码
+qp: 18                         # 编码量化参数，越小质量越高
+jobs: 6
+verify: 2                      # 每个数据集抽查图像对齐的 episode 数
+overwrite: false
+no_plot: false                 # false：生成每个 episode 的图

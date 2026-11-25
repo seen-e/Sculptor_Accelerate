@@ -26,7 +26,31 @@ cd /home/seene/data_test2
 
 ## 一、速度 / 加速度限制在哪里修改
 
-### 方式 1：命令行参数（推荐，不用改代码）
+### YAML 配置（推荐）
+
+主脚本自动读取脚本目录下的 [`config/config.yaml`](config/config.yaml)。文件内已列出所有现有运行参数，初始值与原有默认值相同；本配置仅用于 `retime_lerobot.py`。
+
+首次使用 YAML，请在运行脚本的 Python 环境安装依赖：
+
+```bash
+python -m pip install "PyYAML>=6,<7"
+```
+
+修改配置中的 `src` 为数据集目录列表后，直接运行 `python retime_lerobot.py`；也可以保留 `src: null`，用命令行传入输入目录：
+
+```bash
+python retime_lerobot.py --src /path/to/dataset
+python retime_lerobot.py --config config/config.yaml --src /path/to/dataset --frame-step 2
+python retime_lerobot.py --no-config --src /path/to/dataset
+```
+
+优先级：**命令行参数 > YAML 配置 > 代码默认值**。`--no-config` 完全跳过配置；默认配置文件不存在时沿用代码默认值，显式指定的配置文件不存在则报错。配置文件路径、文件中的输入和输出相对路径均按运行命令时的工作目录解释；默认配置的位置始终按脚本目录查找。建议数据路径使用绝对路径。
+
+YAML 键名使用下划线，例如 `frame_step` 对应 `--frame-step`。布尔值填写 `true` / `false`；六关节限制填写六元素列表。未知键、重复键、错误类型和错误列表长度会报错。配置中的可选限制 `null` 表示关闭。
+
+布尔值也可在命令行双向覆盖：`--no-dwell-cut` / `--dwell-cut`、`--no-plot` / `--plot`、`--overwrite` / `--no-overwrite`。例如配置为 `no_plot: true` 时，可通过 `--plot` 临时恢复绘图。
+
+### 命令行参数（临时覆盖配置）
 
 ```bash
 $PY retime_lerobot.py --src openpi_sculptor_dataset/lerobot_20260918_fixed640_guard_12eps \
@@ -45,15 +69,17 @@ $PY retime_lerobot.py --src openpi_sculptor_dataset/lerobot_20260918_fixed640_gu
 
 > 速度/加速度限值只约束机械臂 6 个关节；保护窗口内的帧原样保留，不受限值约束。
 
-### 方式 2：直接改代码里的默认值
+### 代码内置默认值
+
+这些默认值只在参数没有被 YAML 或命令行指定时生效。通常直接修改 YAML 即可；使用 `--no-config` 可跳过 YAML。
 
 各脚本中对应的 `argparse` 默认值位置：
 
-- [retime_lerobot.py:61-64](retime_lerobot.py#L61-L64) — `--frame-step`、`--vmax-deg`、`--amax-deg`、`--margin`
+- [retime_lerobot.py:72-75](retime_lerobot.py#L72-L75) — `--frame-step`、`--vmax-deg`、`--amax-deg`、`--margin`
 - [subsample_lerobot.py:59-62](subsample_lerobot.py#L59-L62) — `--stride`（最大抽帧步长）、`--vmax-deg`、`--amax-deg`、`--margin`
 - [retime_ep.py:38-42](retime_ep.py#L38-L42) — 同 retime_lerobot.py
 
-代码内部会把 deg 转成 rad 使用（[retime_lerobot.py:89-90](retime_lerobot.py#L89-L90)：`V = np.deg2rad(args.vmax_deg)`，`A = np.deg2rad(args.amax_deg)`），一般不需要动这里。
+代码内部会把 deg 转成 rad 使用（[retime_lerobot.py:107-108](retime_lerobot.py#L107-L108)：`V = np.deg2rad(args.vmax_deg)`，`A = np.deg2rad(args.amax_deg)`），一般不需要动这里。
 
 ### 其他相关参数（retime_lerobot.py）
 
